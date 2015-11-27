@@ -1,1 +1,4 @@
-console.log('Angular Rocks', angular);
+import { config } from './config';
+
+angular.module('app', ['ui-router', 'ngMaterial'])
+.config(config)
