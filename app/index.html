@@ -8,10 +8,97 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-app="app">
+<div ng-controller="MainController" layout="column" ng-cloak="">
 
-  <div class="container" layout="column" layout-align="center center" ui-view>
+  <section layout="row" flex="">
 
-  </div>
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+
+      <md-toolbar>
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-content layout-padding="" ng-controller="LeftCtrl">
+        <md-button ng-click="close()" class="md-primary" hide-gt-md="">
+          Close Sidenav Left
+        </md-button>
+        <p hide-md="" show-gt-md="">
+        </p>
+      <md-list>
+        <md-list-item ng-click="navigateTo('story')">
+          <p>The Story</p>
+        </md-list-item>
+        <md-list-item ng-click="navigateTo('design')">
+          <p>The Design</p>
+        </md-list-item>
+        <md-list-item ng-click="navigateTo('gallery')">
+          <p>Pictures Gallery</p>
+        </md-list-item>
+        <md-list-item ng-click="navigateTo('videos')">
+          <p>Videos & Practices</p>
+        </md-list-item>
+        <md-list-item ng-click="navigateTo('testimonials')">
+          <p>Testimonials</p>
+        </md-list-item>
+      </md-list>
+      </md-content>
+
+    </md-sidenav>
+
+    <md-content flex="" layout-padding="">
+
+
+
+      <div layout="column" layout-fill="" layout-align="top center">
+
+        <div>
+          <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md="">
+            Toggle left
+          </md-button>
+        </div>
+
+        <div>
+          <md-button ng-click="toggleRight()"  hide-gt-md="" class="md-primary">
+            Toggle right
+          </md-button>
+        </div>
+      </div>
+    <div class="container" layout="column" layout-align="center center" ui-view>
+    </div>
+    </md-content>
+
+    <md-sidenav class="md-sidenav-right" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')">
+
+      <md-toolbar>
+        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+      </md-toolbar>
+      <md-content ng-controller="RightCtrl" layout-padding="">
+      <md-list>
+        <md-list-item ng-click="navigateTo('data usage', $event)">
+          <p>Pricing</p>
+        </md-list-item>
+        <md-list-item ng-click="navigateTo('data usage', $event)">
+          <p>Buy Now</p>
+        </md-list-item>
+        <md-list-item ng-click="navigateTo('data usage', $event)">
+          <p>Shipping Info</p>
+        </md-list-item>
+        <md-list-item ng-click="navigateTo('data usage', $event)">
+          <p>Warranty</p>
+        </md-list-item>
+        <md-list-item ng-click="navigateTo('data usage', $event)">
+          <p>Contact</p>
+        </md-list-item>
+      </md-list>
+
+      </md-content>
+
+    </md-sidenav>
+
+  </section>
+
+</div>
+<footer>
+</footer>
 
   <!-- VENDOR -->
   <script src="js/vendor/jquery.js"></script>

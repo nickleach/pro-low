@@ -1,9 +1,27 @@
 html{
-  background-color: black;
+  // background-color: black;
 }
 body{
-  background-color: #536721;
+  background-color: #172C45;
 }
 .main-img{
   width: 30vw;
+}
+
+md-sidenav.md-locked-open {
+    width: 17vw;
+    min-width: 17vw;
+    max-width: 17vw;
+    height: 92vh;
+
+}
+.md-sidenav-left{
+  border-right: 2px solid white;
+}
+.md-sidenav-right{
+  border-left: 2px solid white;
+}
+footer{
+  height:8vh;
+  background-color: #843940;
 }
