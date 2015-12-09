@@ -10,14 +10,22 @@
 </head>
 <body ng-app="app">
 <div ng-controller="MainController" layout="column" ng-cloak="">
+      <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>The Pro Low Putting System</span>
+        </h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
 
   <section layout="row" flex="">
 
-    <md-sidenav class="md-sidenav-left"  md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
 
-      <md-toolbar>
+<!--       <md-toolbar>
         <h1 class="md-toolbar-tools">Sidenav Left</h1>
-      </md-toolbar>
+      </md-toolbar> -->
       <md-content layout-padding="" ng-controller="LeftCtrl">
         <md-button ng-click="close()" class="md-primary" hide-gt-md="">
           Close Sidenav Left
@@ -70,27 +78,27 @@
     </div>
     </md-content>
 
-    <md-sidenav class="md-sidenav-right" md-component-id="right">
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
 
       <md-toolbar>
-        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+        <h1 class="md-toolbar-tools"><i class="fa fa-info-circle"></i></h1>
       </md-toolbar>
       <md-content ng-controller="RightCtrl" layout-padding="">
       <md-list>
         <md-list-item ng-click="navigateTo('story')">
-          <p>The Story</p>
+          <i class="fa fa-book"></i><p>The Story</p>
         </md-list-item>
         <md-list-item ng-click="navigateTo('design')">
-          <p>The Design</p>
+          <i class="fa fa-cogs"></i><p>The Design</p>
         </md-list-item>
         <md-list-item ng-click="navigateTo('data usage', $event)">
-          <p>Shipping Info</p>
+          <i class="fa fa-truck"></i><p>Shipping Info</p>
         </md-list-item>
         <md-list-item ng-click="navigateTo('data usage', $event)">
-          <p>Warranty</p>
+          <i class="fa fa-certificate"></i><p>Warranty</p>
         </md-list-item>
         <md-list-item ng-click="navigateTo('data usage', $event)">
-          <p>Contact</p>
+          <i class="fa fa-phone"></i><p>Contact</p>
         </md-list-item>
       </md-list>
 
