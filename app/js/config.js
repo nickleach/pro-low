@@ -34,6 +34,7 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
       controller: 'MainController'
     });
 
+
     var customPrimary = {
         '50': '#85d971',
         '100': '#73d35d',

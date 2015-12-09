@@ -1,5 +1,9 @@
 function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state){
 
+  // nav toggles
+  $scope.toggleLeft = buildToggler('left');
+  $scope.toggleRight = buildToggler('right');
+
   function buildToggler(navID) {
     let debounceFn =  $mdUtil.debounce(() => {
           $mdSidenav(navID).toggle();
@@ -9,19 +13,17 @@ function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state){
   $scope.cancel = function() {
     $mdDialog.cancel();
   };
-    // nav toggles
-  $scope.toggleLeft = buildToggler('left');
-  $scope.toggleRight = buildToggler('right');
+
+
+  // Navigate function
   $scope.navigateTo = function(state){
     $state.go(state);
   };
 }
 function RightCtrl($scope, $mdSidenav){
-
   $scope.close = function () {
     $mdSidenav('right').close();
   };
-
 }
 function LeftCtrl($scope, $mdSidenav){
   $scope.close = function () {

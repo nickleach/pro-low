@@ -1,8 +1,13 @@
+$blue: #172C45;
 html{
   // background-color: black;
 }
 body{
-  background-color: #172C45;
+  background-color: $blue;
+  // background-color: #172C45;
+}
+.main-content{
+  background-color: $blue;
 }
 .main-img{
   width: 30vw;
@@ -13,7 +18,6 @@ md-sidenav.md-locked-open {
     min-width: 17vw;
     max-width: 17vw;
     height: 92vh;
-
 }
 .md-sidenav-left{
   border-right: 2px solid white;
