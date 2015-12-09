@@ -4,6 +4,7 @@
   <title>Pro Low</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/vendor/normalize.css">
+  <link rel="stylesheet" href="css/vendor/font-awesome.css">
   <link rel="stylesheet" href="css/vendor/angular-material.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -23,23 +24,26 @@
         </md-button>
         <p hide-md="" show-gt-md="">
         </p>
-      <md-list>
-        <md-list-item ng-click="navigateTo('story')">
-          <p>The Story</p>
-        </md-list-item>
-        <md-list-item ng-click="navigateTo('design')">
-          <p>The Design</p>
-        </md-list-item>
-        <md-list-item class="" ng-click="navigateTo('gallery')">
-          <p>Pictures Gallery</p>
-        </md-list-item>
-        <md-list-item ng-click="navigateTo('videos')">
-          <p>Videos & Practices</p>
+        <md-list>
+          <md-list-item ng-click="navigateTo('data usage', $event)">
+           <i class="fa fa-shopping-cart"></i> <p>Buy Now</p>
+          </md-list-item>
+          <md-list-item class="" ng-click="navigateTo('gallery')">
+            <i class="fa fa-picture-o"></i> <p>Gallery</p>
+          </md-list-item>
+          <md-list-item ng-click="navigateTo('videos')">
+            <i class="fa fa-video-camera"></i><p>Videos & Practices</p>
+          </md-list-item>
+          <md-list-item ng-click="navigateTo('data usage', $event)">
+          <i class="fa fa-credit-card"></i><p>Pricing</p>
         </md-list-item>
         <md-list-item ng-click="navigateTo('testimonials')">
-          <p>Testimonials</p>
+          <i class="fa fa-users"></i><p>Testimonials</p>
         </md-list-item>
-      </md-list>
+        <md-list-item ng-click="toggleRight()" >
+          <i class="fa fa-info-circle"></i><p>More Info</p>
+        </md-list-item>
+        </md-list>
       </md-content>
 
     </md-sidenav>
@@ -66,18 +70,18 @@
     </div>
     </md-content>
 
-    <md-sidenav class="md-sidenav-right" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')">
+    <md-sidenav class="md-sidenav-right" md-component-id="right">
 
       <md-toolbar>
         <h1 class="md-toolbar-tools">Sidenav Right</h1>
       </md-toolbar>
       <md-content ng-controller="RightCtrl" layout-padding="">
       <md-list>
-        <md-list-item ng-click="navigateTo('data usage', $event)">
-          <p>Pricing</p>
+        <md-list-item ng-click="navigateTo('story')">
+          <p>The Story</p>
         </md-list-item>
-        <md-list-item ng-click="navigateTo('data usage', $event)">
-          <p>Buy Now</p>
+        <md-list-item ng-click="navigateTo('design')">
+          <p>The Design</p>
         </md-list-item>
         <md-list-item ng-click="navigateTo('data usage', $event)">
           <p>Shipping Info</p>
