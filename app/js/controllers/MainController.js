@@ -16,8 +16,13 @@ function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state){
 
 
   // Navigate function
-  $scope.navigateTo = function(state){
+  $scope.navigateTo = function(state, nav){
     $state.go(state);
+    if (nav == "left"){
+      $scope.toggleLeft();
+    }else if(nav == "right"){
+      $scope.toggleRight();
+    }
   };
 }
 function RightCtrl($scope, $mdSidenav){

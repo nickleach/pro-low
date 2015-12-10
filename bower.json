@@ -21,7 +21,8 @@
     "angular": "~1.4.7",
     "angular-ui-router": "~0.2.15",
     "angular-material": "~0.11.4",
-    "font-awesome": "~4.5.0"
+    "font-awesome": "~4.5.0",
+    "Materialize": "materialize#~0.97.3"
   },
   "devDependencies": {
     "mocha": "~2.2.5",

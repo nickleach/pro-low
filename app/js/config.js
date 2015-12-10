@@ -8,6 +8,11 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
       templateUrl: 'js/templates/home.tpl.html',
       controller: 'MainController'
     })
+    .state('buy', {
+      url: '/buy',
+      templateUrl: 'js/templates/buy.tpl.html',
+      controller: 'BuyCtrl'
+    })
     .state('story', {
       url: '/story',
       templateUrl: 'js/templates/story.tpl.html',
@@ -32,6 +37,11 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
       url: '/design',
       templateUrl: 'js/templates/design.tpl.html',
       controller: 'MainController'
+    })
+    .state('contact', {
+      url: '/contact',
+      templateUrl: 'js/templates/contact.tpl.html',
+      controller: 'ContactCtrl'
     });
 
 

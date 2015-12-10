@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pro Low</title>
+  <title>The Pro Low Putting System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/vendor/normalize.css">
   <link rel="stylesheet" href="css/vendor/font-awesome.css">
   <link rel="stylesheet" href="css/vendor/angular-material.css">
+  <link rel="stylesheet" href="css/vendor/materialize.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-app="app">
 <div ng-controller="MainController" layout="column" ng-cloak="">
       <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>
+        <h2 ng-click="navigateTo('home')">
           <span>The Pro Low Putting System</span>
         </h2>
         <span flex></span>
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-youtube"></i>
       </div>
     </md-toolbar>
 
@@ -28,29 +31,29 @@
       </md-toolbar> -->
       <md-content layout-padding="" ng-controller="LeftCtrl">
         <md-button ng-click="close()" class="md-primary" hide-gt-md="">
-          Close Sidenav Left
+          <i class="fa fa-long-arrow-left"></i>
         </md-button>
         <p hide-md="" show-gt-md="">
         </p>
         <md-list>
-          <md-list-item ng-click="navigateTo('data usage', $event)">
-           <i class="fa fa-shopping-cart"></i> <p>Buy Now</p>
+          <md-list-item ng-click="navigateTo('buy', 'left')">
+           <i class="fa fa-shopping-cart"></i><p>Buy Now</p>
           </md-list-item>
-          <md-list-item class="" ng-click="navigateTo('gallery')">
+          <md-list-item class="" ng-click="navigateTo('gallery', 'left')">
             <i class="fa fa-picture-o"></i> <p>Gallery</p>
           </md-list-item>
-          <md-list-item ng-click="navigateTo('videos')">
+          <md-list-item ng-click="navigateTo('videos', 'left')">
             <i class="fa fa-video-camera"></i><p>Videos & Practices</p>
           </md-list-item>
-          <md-list-item ng-click="navigateTo('data usage', $event)">
+          <md-list-item ng-click="navigateTo('pricing', 'left')">
           <i class="fa fa-credit-card"></i><p>Pricing</p>
-        </md-list-item>
-        <md-list-item ng-click="navigateTo('testimonials')">
-          <i class="fa fa-users"></i><p>Testimonials</p>
-        </md-list-item>
-        <md-list-item ng-click="toggleRight()" >
-          <i class="fa fa-info-circle"></i><p>More Info</p>
-        </md-list-item>
+          </md-list-item>
+          <md-list-item ng-click="navigateTo('testimonials', 'left')">
+            <i class="fa fa-users"></i><p>Testimonials</p>
+          </md-list-item>
+          <md-list-item ng-click="toggleRight()" >
+            <i class="fa fa-info-circle"></i><p>More Info</p>
+          </md-list-item>
         </md-list>
       </md-content>
 
@@ -60,17 +63,17 @@
 
 
 
-      <div layout="column" layout-fill="" layout-align="top center">
+      <div layout="row">
 
-        <div>
+        <div id="leftMenu">
           <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md="">
-            Toggle left
+            <i class="fa fa-bars"></i>
           </md-button>
         </div>
 
-        <div>
+        <div id="rightMenu">
           <md-button ng-click="toggleRight()"  hide-gt-md="" class="md-primary">
-            Toggle right
+            <i class="fa fa-bars"></i>
           </md-button>
         </div>
       </div>
@@ -85,10 +88,10 @@
       </md-toolbar>
       <md-content ng-controller="RightCtrl" layout-padding="">
       <md-list>
-        <md-list-item ng-click="navigateTo('story')">
+        <md-list-item ng-click="navigateTo('story', 'right')">
           <i class="fa fa-book"></i><p>The Story</p>
         </md-list-item>
-        <md-list-item ng-click="navigateTo('design')">
+        <md-list-item ng-click="navigateTo('design', 'right')">
           <i class="fa fa-cogs"></i><p>The Design</p>
         </md-list-item>
         <md-list-item ng-click="navigateTo('data usage', $event)">
@@ -97,7 +100,7 @@
         <md-list-item ng-click="navigateTo('data usage', $event)">
           <i class="fa fa-certificate"></i><p>Warranty</p>
         </md-list-item>
-        <md-list-item ng-click="navigateTo('data usage', $event)">
+        <md-list-item ng-click="navigateTo('contact', 'right')">
           <i class="fa fa-phone"></i><p>Contact</p>
         </md-list-item>
       </md-list>
@@ -120,9 +123,16 @@
   <script src="js/vendor/angular-animate.js"></script>
   <script src="js/vendor/angular-aria.js"></script>
   <script src="js/vendor/angular-material.js"></script>
+  <script src="js/vendor/materialize.js"></script>
+  <script src="js/vendor/materialbox.js"></script>
+  <script src="js/vendor/slider.js"></script>
+
+
+
 
   <!-- APP -->
   <script src="dist/app.js"></script>
-
+  <script>
+  </script>
 </body>
 </html>

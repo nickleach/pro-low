@@ -1,4 +1,6 @@
 $blue: #172C45;
+$green: #43a047;
+
 html{
   // background-color: black;
 }
@@ -12,16 +14,38 @@ body{
 .main-img{
   width: 30vw;
 }
+md-toolbar{
+  .fa{
+    margin-right: 1vw;
+  }
+}
 md-sidenav{
   .fa{
     margin-right: 1vw;
   }
 }
+
 md-sidenav.md-locked-open {
-    width: 17vw;
-    min-width: 17vw;
-    max-width: 17vw;
+    // width: 17vw;
+    // min-width: 17vw;
+    // max-width: 17vw;
     // height: 92vh;
+}
+.md-toolbar-tools{
+  background-color: #43a047;
+}
+.fa-bars{
+  font-size: 25px;
+}
+#rightMenu{
+  position: absolute;
+  right: 2vw;
+}
+.md-button.md-primary {
+    color: black;
+}
+.fa-long-arrow-left{
+  font-size: 25px;
 }
 // .md-sidenav-left{
 //   border-right: 2px solid white;
@@ -33,3 +57,16 @@ md-sidenav.md-locked-open {
 //   height:8vh;
 //   background-color: #843940;
 // }
+
+
+// tabs for buy page
+.buy-tabs md-content {
+  background-color: transparent !important; }
+  .buy-tabs md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; }
+    .buy-tabs md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .buy-tabs md-content h1:first-child {
+    margin-top: 0; }
+
