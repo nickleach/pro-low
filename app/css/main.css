@@ -23,6 +23,9 @@ md-sidenav .fa {
 .fa-long-arrow-left {
   font-size: 25px; }
 
+.materialboxed {
+  display: inline; }
+
 .buy-tabs md-content {
   background-color: transparent !important; }
 

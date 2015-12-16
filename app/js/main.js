@@ -2,9 +2,9 @@ import { config } from './config';
 import { MainController, LeftCtrl, RightCtrl } from './controllers/MainController';
 import { BuyController } from './controllers/BuyController';
 import { MediaController } from './controllers/MediaController';
-import { ContactContoller } from './controllers/ContactController'
+import { ContactContoller } from './controllers/ContactController';
 
-angular.module('app', ['ui.router', 'ngMaterial'])
+angular.module('app', ['ui.router', 'ngMaterial', 'jkuri.gallery'])
 .config(config)
 .controller('MainController', MainController)
 .controller('LeftCtrl', LeftCtrl)
