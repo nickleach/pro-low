@@ -45,9 +45,12 @@
           <md-list-item ng-click="navigateTo('videos', 'left')">
             <i class="fa fa-video-camera"></i><p>Videos & Practices</p>
           </md-list-item>
-          <md-list-item ng-click="navigateTo('pricing', 'left')">
-          <i class="fa fa-credit-card"></i><p>Pricing</p>
-          </md-list-item>
+        <md-list-item ng-click="navigateTo('story', 'left')">
+          <i class="fa fa-book"></i><p>The Story</p>
+        </md-list-item>
+        <md-list-item ng-click="navigateTo('design', 'left')">
+          <i class="fa fa-cogs"></i><p>The Design</p>
+        </md-list-item>
           <md-list-item ng-click="navigateTo('testimonials', 'left')">
             <i class="fa fa-users"></i><p>Testimonials</p>
           </md-list-item>
@@ -88,11 +91,8 @@
       </md-toolbar>
       <md-content ng-controller="RightCtrl" layout-padding="">
       <md-list>
-        <md-list-item ng-click="navigateTo('story', 'right')">
-          <i class="fa fa-book"></i><p>The Story</p>
-        </md-list-item>
-        <md-list-item ng-click="navigateTo('design', 'right')">
-          <i class="fa fa-cogs"></i><p>The Design</p>
+        <md-list-item ng-click="navigateTo('pricing', 'right')">
+          <i class="fa fa-credit-card"></i><p>Pricing</p>
         </md-list-item>
         <md-list-item ng-click="navigateTo('data usage', $event)">
           <i class="fa fa-truck"></i><p>Shipping Info</p>
