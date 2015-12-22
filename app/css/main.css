@@ -37,6 +37,66 @@
 .rainforest {
   background-color: #637f2e; }
 
+.blue {
+  background-color: #1D3C7C; }
+
+.white {
+  background-color: #fefefe; }
+
+.cardinal {
+  background-color: #931e42; }
+
+.punch {
+  background-color: #b92c28; }
+
+.sundown {
+  background-color: #f7b3b6; }
+
+.red {
+  background-color: #ed2b33; }
+
+.flamingo {
+  background-color: #f05c62; }
+
+.cupid {
+  background-color: #f6b7ba; }
+
+.apple {
+  background-color: #54aa3a; }
+
+.mantis {
+  background-color: #81c252; }
+
+.ironbark {
+  background-color: #68502a; }
+
+.highland {
+  background-color: #809a53; }
+
+.rainforest {
+  background-color: #637f2e; }
+
+.header-text {
+  font-family: 'PT Serif', serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: -1px -1px 0 #fefefe, 1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px 1px 0 #fefefe; }
+
+.cursive {
+  font-family: 'Damion', cursive; }
+
+.white-font {
+  color: #fefefe; }
+
+.red-font {
+  color: #ed2b33; }
+
+body {
+  background-color: #1D3C7C; }
+
+.main-content {
+  background-color: #1D3C7C; }
+
 .main-img {
   width: 30vw; }
 

@@ -1,0 +1,24 @@
+@import 'colors';
+
+.header-text{
+  font-family: 'PT Serif', serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow:
+    -1px -1px 0 $white,
+    1px -1px 0 $white,
+    -1px 1px 0 $white,
+    1px 1px 0 $white;
+}
+
+.cursive{
+  font-family: 'Damion', cursive;
+}
+
+.white-font{
+  color: $white;
+}
+
+.red-font{
+  color: $red;
+}
