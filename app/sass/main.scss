@@ -1,5 +1,4 @@
-$blue: #172C45;
-$green: #43a047;
+@import "colors";
 
 html{
   // background-color: black;
@@ -14,6 +13,21 @@ body{
 .main-img{
   width: 30vw;
 }
+
+// if materialize nav
+nav{
+  height: 20vh;
+}
+.brand-logo{
+  img{
+    width: 32vh;
+  }
+}
+.nav-wrapper{
+  background-color: $apple;
+}
+
+// if angular material nav
 md-toolbar{
   .fa{
     margin-right: 1vw;
@@ -57,6 +71,11 @@ md-sidenav.md-locked-open {
 //   height:8vh;
 //   background-color: #843940;
 // }
+
+.slider-logo{
+  margin: 0;
+
+}
 
 .ng-gallery{
   .thumb-holder{

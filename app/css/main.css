@@ -1,5 +1,53 @@
+.blue {
+  background-color: #1D3C7C; }
+
+.white {
+  background-color: #fefefe; }
+
+.cardinal {
+  background-color: #931e42; }
+
+.punch {
+  background-color: #b92c28; }
+
+.sundown {
+  background-color: #f7b3b6; }
+
+.red {
+  background-color: #ed2b33; }
+
+.flamingo {
+  background-color: #f05c62; }
+
+.cupid {
+  background-color: #f6b7ba; }
+
+.apple {
+  background-color: #54aa3a; }
+
+.mantis {
+  background-color: #81c252; }
+
+.ironbark {
+  background-color: #68502a; }
+
+.highland {
+  background-color: #809a53; }
+
+.rainforest {
+  background-color: #637f2e; }
+
 .main-img {
   width: 30vw; }
+
+nav {
+  height: 20vh; }
+
+.brand-logo img {
+  width: 32vh; }
+
+.nav-wrapper {
+  background-color: #54aa3a; }
 
 md-toolbar .fa {
   margin-right: 1vw; }
@@ -22,6 +70,9 @@ md-sidenav .fa {
 
 .fa-long-arrow-left {
   font-size: 25px; }
+
+.slider-logo {
+  margin: 0; }
 
 .ng-gallery .thumb-holder {
   display: inline-block; }

@@ -1,5 +1,9 @@
 function MediaController($scope){
 
+    $scope.test = function(){
+      console.log('worked');
+    };
+
     $scope.images = [
       {
         thumb: 'assets/thumbs/closeup1-compressor_tn.jpg',

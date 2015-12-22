@@ -12,16 +12,26 @@
 </head>
 <body ng-app="app">
 <div ng-controller="MainController" layout="column" ng-cloak="">
-      <md-toolbar>
+<!--       <md-toolbar>
       <div class="md-toolbar-tools">
+      <img style="width: 100%;" src="assets/logos/logo.png" alt="pro low logo">
         <h2 ng-click="navigateTo('home')">
-          <span>The Pro Low Putting System</span>
+          <span><img style="width: 100%;" src="assets/logos/logo.png" alt="pro low logo"></span>
         </h2>
         <span flex></span>
         <i class="fa fa-facebook"></i>
         <i class="fa fa-youtube"></i>
       </div>
-    </md-toolbar>
+    </md-toolbar> -->
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"><img src="assets/logos/logo.png" alt="pro low logo"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="badges.html"><i class="fa fa-youtube"></i></a></li>
+      </ul>
+    </div>
+  </nav>
 
   <section layout="row" flex="">
 
