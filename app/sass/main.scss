@@ -1,5 +1,6 @@
 @import "colors";
 @import "fonts";
+@import "overrides";
 
 html{
   // background-color: black;
@@ -36,6 +37,10 @@ md-sidenav{
     margin-right: 1vw;
   }
 }
+.sidenav-active{
+  background-color: #E4E4E4;
+  transition: all 2s ease;
+}
 
 md-sidenav.md-locked-open {
     width: 200px;
@@ -49,6 +54,7 @@ md-sidenav.md-locked-open {
 }
 .fa-bars{
   font-size: 25px;
+  color: white;
 }
 #rightMenu{
   position: absolute;
@@ -96,18 +102,5 @@ md-sidenav.md-locked-open {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   opacity: 0.8;
 }
-// tabs for buy page
-.buy-tabs md-content {
-  background-color: transparent !important; }
-  .buy-tabs md-content md-tabs {
-    background: #f6f6f6;
-    border: 1px solid #e1e1e1; }
-    .buy-tabs md-content md-tabs md-tabs-wrapper {
-      background: white; }
-  .buy-tabs md-content h1:first-child {
-    margin-top: 0; }
 
-    md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused{
-      color: black
-    }
 
