@@ -1,6 +1,9 @@
 .blue {
   background-color: #1D3C7C; }
 
+.blue-back {
+  background-color: #1D3C7C; }
+
 .white {
   background-color: #fefefe; }
 
@@ -38,6 +41,9 @@
   background-color: #637f2e; }
 
 .blue {
+  background-color: #1D3C7C; }
+
+.blue-back {
   background-color: #1D3C7C; }
 
 .white {
@@ -100,11 +106,8 @@ body {
 .main-img {
   width: 30vw; }
 
-nav {
-  height: 20vh; }
-
 .brand-logo img {
-  width: 32vh; }
+  width: 60vmin; }
 
 .nav-wrapper {
   background-color: #54aa3a; }
@@ -114,6 +117,12 @@ md-toolbar .fa {
 
 md-sidenav .fa {
   margin-right: 1vw; }
+
+md-sidenav.md-locked-open {
+  width: 200px;
+  min-width: 200px;
+  max-width: 304px;
+  height: 100%; }
 
 .md-toolbar-tools {
   background-color: #43a047; }
@@ -134,12 +143,18 @@ md-sidenav .fa {
 .slider-logo {
   margin: 0; }
 
-.ng-gallery .thumb-holder {
-  display: inline-block; }
+.slider .cursive {
+  text-shadow: 2px 2px 8px black; }
 
-.ng-gallery .ng-thumb {
-  height: inherit;
-  cursor: zoom-in; }
+.ng-gallery {
+  text-align: center; }
+  .ng-gallery .thumb-holder {
+    display: inline-block;
+    border: 2px solid white;
+    margin: 2px; }
+  .ng-gallery .ng-thumb {
+    height: inherit;
+    cursor: zoom-in; }
 
 .thumb-holder:hover {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -157,3 +172,6 @@ md-sidenav .fa {
 
 .buy-tabs md-content h1:first-child {
   margin-top: 0; }
+
+md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {
+  color: black; }

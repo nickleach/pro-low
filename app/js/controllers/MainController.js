@@ -20,8 +20,12 @@ function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state){
     $state.go(state);
     if (nav == "left"){
       $scope.toggleLeft();
+      if(!$('.md-sidenav-right').hasClass('md-closed'))
+        $scope.toggleRight();
     }else if(nav == "right"){
       $scope.toggleRight();
+      if(!$('.md-sidenav-left').hasClass('md-closed'))
+        $scope.toggleLeft();
     }
   };
 }

@@ -16,12 +16,9 @@ body{
 }
 
 // if materialize nav
-nav{
-  height: 20vh;
-}
 .brand-logo{
   img{
-    width: 32vh;
+    width: 60vmin;
   }
 }
 .nav-wrapper{
@@ -41,11 +38,12 @@ md-sidenav{
 }
 
 md-sidenav.md-locked-open {
-    // width: 17vw;
-    // min-width: 17vw;
-    // max-width: 17vw;
-    // height: 92vh;
+    width: 200px;
+    min-width: 200px;
+    max-width: 304px;
+    height: 100%;
 }
+
 .md-toolbar-tools{
   background-color: #43a047;
 }
@@ -77,10 +75,17 @@ md-sidenav.md-locked-open {
   margin: 0;
 
 }
-
+.slider{
+  .cursive{
+    text-shadow: 2px 2px 8px black;
+  }
+}
 .ng-gallery{
+  text-align: center;
   .thumb-holder{
     display: inline-block;
+    border: 2px solid white;
+    margin: 2px;
   }
   .ng-thumb{
     height: inherit;
@@ -101,4 +106,8 @@ md-sidenav.md-locked-open {
       background: white; }
   .buy-tabs md-content h1:first-child {
     margin-top: 0; }
+
+    md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused{
+      color: black
+    }
 
