@@ -21,7 +21,7 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
     .state('testimonials', {
       url: '/testimonials',
       templateUrl: 'js/templates/testimonials.tpl.html',
-      controller: 'MainController'
+      controller: 'TestimonialController'
     })
     .state('gallery', {
       url: '/gallery',
@@ -32,6 +32,11 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
       url: '/videos',
       templateUrl: 'js/templates/videos.tpl.html',
       controller: 'MediaController'
+    })
+    .state('pricing', {
+      url: '/pricing',
+      tempalteUrl: 'js/templates/pricing.tpl.html',
+      controller: 'MainController'
     })
     .state('design', {
       url: '/design',
@@ -45,6 +50,4 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
     });
 
 }
-export {
-  config
-};
+export default config;

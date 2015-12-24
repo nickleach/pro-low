@@ -1,6 +1,4 @@
 function ContactController($scope){
 
 }
-export {
-  ContactController
-};
+export default ContactController;

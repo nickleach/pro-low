@@ -54,6 +54,4 @@ function MediaController($scope){
 
 }
 
-export{
-  MediaController
-};
+export default MediaController;

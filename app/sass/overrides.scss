@@ -2,6 +2,9 @@
 md-list md-list-item button.md-button:not([disabled]):hover{
   background-color: transparent;
 }
+.md-button:not([disabled]).md-focused{
+  background-color: transparent;
+}
 // tabs for buy page
 .buy-tabs md-content {
   background-color: transparent !important; }

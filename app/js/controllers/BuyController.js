@@ -1,6 +1,4 @@
 function BuyController($scope){
 
 }
-export{
-  BuyController
-};
+export default BuyController;

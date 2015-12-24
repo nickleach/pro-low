@@ -58,25 +58,25 @@
         <p hide-md="" show-gt-md="">
         </p>
         <md-list>
-          <md-list-item ng-click="navigateTo('buy', 'left')">
+          <md-list-item id="buy" ng-click="navigateTo('buy', 'left')">
            <i class="fa fa-shopping-cart"></i><p>Buy Now</p>
           </md-list-item>
-          <md-list-item class="" ng-click="navigateTo('gallery', 'left')">
+          <md-list-item id="gallery" class="" ng-click="navigateTo('gallery', 'left')">
             <i class="fa fa-picture-o"></i> <p>Gallery</p>
           </md-list-item>
-          <md-list-item ng-click="navigateTo('videos', 'left')">
+          <md-list-item id="videos" ng-click="navigateTo('videos', 'left')">
             <i class="fa fa-video-camera"></i><p>Videos</p>
           </md-list-item>
-        <md-list-item ng-click="navigateTo('story', 'left')">
-          <i class="fa fa-book"></i><p>The Story</p>
-        </md-list-item>
-        <md-list-item ng-click="navigateTo('design', 'left')">
-          <i class="fa fa-cogs"></i><p>The Design</p>
-        </md-list-item>
-          <md-list-item ng-click="navigateTo('testimonials', 'left')">
+          <md-list-item id="story" ng-click="navigateTo('story', 'left')">
+            <i class="fa fa-book"></i><p>The Story</p>
+          </md-list-item>
+          <md-list-item id="design" ng-click="navigateTo('design', 'left')">
+            <i class="fa fa-cogs"></i><p>The Design</p>
+          </md-list-item>
+          <md-list-item id="testimonials" ng-click="navigateTo('testimonials', 'left')">
             <i class="fa fa-users"></i><p>Testimonials</p>
           </md-list-item>
-          <md-list-item ng-click="toggleRight()" >
+          <md-list-item id="info" ng-click="toggleRight()" >
             <i class="fa fa-info-circle"></i><p>More Info</p>
           </md-list-item>
         </md-list>
@@ -108,16 +108,16 @@
       </md-toolbar>
       <md-content ng-controller="RightCtrl" layout-padding="">
       <md-list>
-        <md-list-item ng-click="navigateTo('pricing', 'right')">
+        <md-list-item id="pricing" ng-click="navigateTo('pricing', 'right')">
           <i class="fa fa-credit-card"></i><p>Pricing</p>
         </md-list-item>
-        <md-list-item ng-click="navigateTo('data usage', $event)">
+        <md-list-item id="shipping" ng-click="showShipping($event)">
           <i class="fa fa-truck"></i><p>Shipping Info</p>
         </md-list-item>
-        <md-list-item ng-click="navigateTo('data usage', $event)">
+        <md-list-item id="warranty" ng-click="showWarranty($event)">
           <i class="fa fa-certificate"></i><p>Warranty</p>
         </md-list-item>
-        <md-list-item ng-click="navigateTo('contact', 'right')">
+        <md-list-item id="contact" ng-click="navigateTo('contact', 'right')">
           <i class="fa fa-phone"></i><p>Contact</p>
         </md-list-item>
       </md-list>
