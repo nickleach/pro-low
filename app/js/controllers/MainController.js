@@ -55,6 +55,10 @@ function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state, $md
       clickOutsideToClose: true,
     });
   };
+
+  $scope.contactUs = function(contact){
+    console.log(contact);
+  };
 }
 
 

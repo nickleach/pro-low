@@ -1,1 +1,42 @@
-<p>Contact Info coming soon... stay posted....</p>
+
+      <h5>Contact Us</h5>
+      <p>Or fill out the form below...</p>
+  <md-card layout-padding>
+    <md-card-content>
+      <div class="row">
+        <form class="col s12" ng-submit="contactUs(contact)">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix" type="text" class="validate" ng-model="contact.firstName">
+              <label for="icon_prefix">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate" ng-model="contact.lastName">
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">phone</i>
+              <input id="icon_telephone" type="tel" class="validate" ng-model="contact.phone">
+              <label for="icon_telephone">Telephone</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">email</i>
+              <input id="email" type="email" class="validate" ng-model="contact.email">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mode_edit</i>
+              <textarea id="icon_prefix2" class="materialize-textarea" ng-model="contact.message"></textarea>
+              <label for="icon_prefix2">Message</label>
+            </div>
+          </div>
+          <md-button>Submit</md-button>
+        </form>
+      </div>
+    </md-card-content>
+  </md-card>

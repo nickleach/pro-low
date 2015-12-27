@@ -35,7 +35,7 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
     })
     .state('pricing', {
       url: '/pricing',
-      tempalteUrl: 'js/templates/pricing.tpl.html',
+      templateUrl: 'js/templates/pricing.tpl.html',
       controller: 'MainController'
     })
     .state('design', {
