@@ -22,17 +22,18 @@
     "angular-ui-router": "~0.2.15",
     "angular-material": "~0.11.4",
     "font-awesome": "~4.5.0",
-    "Materialize": "materialize#~0.97.3",
-    "ngGallery": "*",
-    "compass-breakpoint": "breakpoint-sass#~2.6.1"
+    // "Materialize": "materialize#~0.97.3",
+    // "ngGallery": "*",
+    "compass-breakpoint": "breakpoint-sass#~2.6.1",
+    "angular-cookies": "~1.4.8"
   },
   "devDependencies": {
     "mocha": "~2.2.5",
     "chai": "~3.0.0"
   },
   "main": "",
-  "moduleType": [],
-  "suppliedDependencies": {
-      "ngGallery": true
-    }
+  "moduleType": []
+  // "suppliedDependencies": {
+  //   "ngGallery": true
+  // }
 }

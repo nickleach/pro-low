@@ -21,6 +21,28 @@ var notifyError = function() {
   });
 };
 
+gulp.task('vendor', function() {
+  return gulp.src([
+    './app/js/vendor/jquery.js',
+    './app/js/vendor/underscore.js',
+    './app/js/vendor/angular.js',
+    './app/js/vendor/angular-ui-router.js',
+    './app/js/vendor/angular-animate.js',
+    './app/js/vendor/angular-aria.js',
+    './app/js/vendor/angular-material.js',
+    './app/js/vendor/ngGallery.js',
+    './app/js/vendor/materialize.js',
+    './app/js/vendor/materialbox.js',
+    './app/js/vendor/slider.js',
+    './app/js/vendor/angular-cookies.js'
+    ])
+    .pipe(concat('concat.js'))
+    .pipe(gulp.dest('./app/dist/'))
+    .pipe(rename('vendor.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./app/dist'));
+});
+
 
 //================================================
 //  BABEL + BROWSERIFY = BABELIFY
@@ -47,7 +69,7 @@ gulp.task('watchlist', function() {
   gulp.watch('./app/sass/*.scss', ['sass']);
   gulp.watch('./bower.json',      ['bower']);
   gulp.watch('./app/index.html',  ['hint:html']);
-  gulp.watch(['./app/js/**/*.js', '!./app/dist/app.js'],  ['hint:js', 'babelify']);
+  gulp.watch(['./app/js/**/*.js', '!./app/dist/app.js'],  ['hint:js', 'babelify', 'vendor']);
 });
 
 //================================================
