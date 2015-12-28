@@ -1,8 +1,8 @@
-.blue {
-  background-color: #1D3C7C; }
-
 .blue-back {
   background-color: #1D3C7C; }
+
+.blue-card {
+  background-color: #1D557C; }
 
 .white {
   background-color: #fefefe; }
@@ -40,11 +40,11 @@
 .rainforest {
   background-color: #637f2e; }
 
-.blue {
-  background-color: #1D3C7C; }
-
 .blue-back {
   background-color: #1D3C7C; }
+
+.blue-card {
+  background-color: #1D557C; }
 
 .white {
   background-color: #fefefe; }
@@ -102,6 +102,9 @@ md-list md-list-item button.md-button:not([disabled]):hover {
 
 .md-button:not([disabled]).md-focused {
   background-color: transparent; }
+
+md-card {
+  box-shadow: 9px 1px 3px 0px rgba(0, 0, 0, 0.28), 5px 6px 1px 0px rgba(0, 0, 0, 0.24), 0px 2px 1px -1px rgba(0, 0, 0, 0.12); }
 
 .buy-tabs md-content {
   background-color: transparent !important; }

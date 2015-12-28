@@ -12,14 +12,13 @@ $ironbark: #68502a;
 $highland: #809a53;
 $rainforest: #637f2e;
 $blue: #1D3C7C;
-
-.blue{
-  background-color: $blue;
-}
+$light-blue: #1D557C;
 .blue-back{
   background-color: $blue;
 }
-
+.blue-card{
+  background-color: $light-blue;
+}
 .white{
   background-color: $white;
 }
