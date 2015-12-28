@@ -31,5 +31,8 @@
     "chai": "~3.0.0"
   },
   "main": "",
-  "moduleType": []
+  "moduleType": [],
+  "suppliedDependencies": {
+      "ngGallery": true
+    }
 }

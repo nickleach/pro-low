@@ -3,7 +3,7 @@ angular.module('jkuri.gallery', [])
 .directive('ngGallery', ['$document', '$timeout', '$q', '$templateCache', function($document, $timeout, $q, $templateCache) {
 	'use strict';
 
-	var defaults = { 
+	var defaults = {
 		baseClass   : 'ng-gallery',
 		thumbClass  : 'ng-thumb',
 		templateUrl : 'ng-gallery.html'
@@ -26,14 +26,14 @@ angular.module('jkuri.gallery', [])
 	// Set the default template
   	$templateCache.put(template_url,
 	'<div class="{{ baseClass }}">' +
-	'  <div ng-repeat="i in images">' +
+	'  <div ng-repeat="i in images" class="thumb-holder">' +
 	'    <img ng-src="{{ i.thumb }}" class="{{ thumbClass }}" ng-click="openGallery($index)" alt="Image {{ $index + 1 }}" />' +
 	'  </div>' +
 	'</div>' +
 	'<div class="ng-overlay" ng-show="opened">' +
 	'</div>' +
 	'<div class="ng-gallery-content" ng-show="opened">' +
-	'  <div class="uil-ring-css" ng-show="loading"><div></div></div>' + 
+	'  <div class="uil-ring-css" ng-show="loading"><div></div></div>' +
 	'  <a class="close-popup" ng-click="closeGallery()"><i class="fa fa-close"></i></a>' +
 	'  <a class="nav-left" ng-click="prevImage()"><i class="fa fa-angle-left"></i></a>' +
 	'  <img ng-src="{{ img }}" ng-click="nextImage()" ng-show="!loading" class="effect" />' +
@@ -41,7 +41,7 @@ angular.module('jkuri.gallery', [])
 	'  <span class="info-text">{{ index + 1 }}/{{ images.length }} - {{ description }}</span>' +
 	'  <div class="ng-thumbnails-wrapper">' +
 	'    <div class="ng-thumbnails slide-left">' +
-	'      <div ng-repeat="i in images">' + 
+	'      <div ng-repeat="i in images">' +
 	'        <img ng-src="{{ i.thumb }}" ng-class="{\'active\': index === $index}" ng-click="changeImage($index)" />' +
 	'      </div>' +
 	'    </div>' +
@@ -86,11 +86,11 @@ angular.module('jkuri.gallery', [])
 				      	}
 				      	deferred.resolve(image);
 				};
-		
+
 				image.onerror = function () {
 					deferred.reject();
 				};
-				
+
 				image.src = scope.images[i].img;
 				scope.loading = true;
 
