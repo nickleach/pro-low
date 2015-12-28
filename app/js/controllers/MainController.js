@@ -57,7 +57,7 @@ function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state, $md
   };
 
   $scope.contactUs = function(contact){
-    console.log(contact);
+
   };
 }
 

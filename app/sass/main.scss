@@ -1,6 +1,10 @@
 @import "colors";
 @import "fonts";
 @import "overrides";
+@import "_breakpoint";
+
+
+$desktop : 992px;
 
 html{
   // background-color: black;
@@ -19,7 +23,12 @@ body{
 // if materialize nav
 .brand-logo{
   img{
-    width: 80vmin;
+    width: 90%;
+  }
+  @include breakpoint($desktop){
+    img{
+      width: 30%;
+    }
   }
 }
 .nav-wrapper{
