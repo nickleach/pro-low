@@ -1,0 +1,34 @@
+<div layout="row">
+   <md-card  style="width: 700px;">
+      <md-card-content>
+      <table class="white striped">
+        <thead>
+          <tr>
+              <th data-field="id">Qty</th>
+              <th data-field="name">Item</th>
+              <th data-field="price">Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>{{cart.quantity}}</td>
+            <td>{{cart.title}}</td>
+            <td>{{cart.price}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Shipping</td>
+            <td>$0.00</td>
+          </tr>
+           <tr>
+            <td></td>
+            <td>Total</td>
+            <td>{{cart.price + cart.shipping }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </md-card-content>
+  </md-card>
+</div>

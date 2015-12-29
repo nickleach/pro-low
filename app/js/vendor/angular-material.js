@@ -3801,7 +3801,7 @@ function attrNoDirective () {
    * @module material.core
    *
    * @description
-   * Provides ripple effects for md-tabs.  See $mdInkRipple service for all possible configuration options.
+   * Provides ripple effects for ss.  See $mdInkRipple service for all possible configuration options.
    *
    * @param {object=} scope Scope within the current context
    * @param {object=} element The element the ripple effect should be applied to

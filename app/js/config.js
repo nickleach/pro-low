@@ -43,6 +43,11 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
       templateUrl: 'js/templates/design.tpl.html',
       controller: 'MainController'
     })
+    .state('cart', {
+      url: '/cart',
+      templateUrl: 'js/templates/cart.tpl.html',
+      controller: 'CartController'
+    })
     .state('contact', {
       url: '/contact',
       templateUrl: 'js/templates/contact.tpl.html',

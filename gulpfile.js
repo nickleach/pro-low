@@ -2,6 +2,8 @@ var gulp        = require('gulp');
 var wrap        = require('gulp-wrap');
 var declare     = require('gulp-declare');
 var concat      = require('gulp-concat');
+var rename      = require('gulp-rename');
+var uglify      = require('gulp-uglify');
 var sass        = require('gulp-sass');
 var bower       = require('main-bower-files');
 var notify      = require('gulp-notify');
@@ -69,7 +71,7 @@ gulp.task('watchlist', function() {
   gulp.watch('./app/sass/*.scss', ['sass']);
   gulp.watch('./bower.json',      ['bower']);
   gulp.watch('./app/index.html',  ['hint:html']);
-  gulp.watch(['./app/js/**/*.js', '!./app/dist/app.js'],  ['hint:js', 'babelify', 'vendor']);
+  gulp.watch(['./app/js/**/*.js', '!./app/dist/app.js'],  ['hint:js', 'babelify']);
 });
 
 //================================================
