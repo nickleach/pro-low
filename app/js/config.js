@@ -58,7 +58,7 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
 
 function run(CartService, $rootScope){
   $rootScope.$on('$stateChangeStart', function () {
-    CartService.getCart();
+    $rootScope.cart = CartService.getCart();
   });
 }
 export {

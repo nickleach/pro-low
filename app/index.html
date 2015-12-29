@@ -41,7 +41,15 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
         <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-        <li ng-show="hasCart" style="border-left: 1px solid white;"><a href="#/cart"><i class="fa fa-shopping-cart"></i></a></li>
+        <li ng-show="hasCart" style="border-left: 1px solid white;">
+          <a href="#/cart" layout="row">
+            <i layout="column" style="margin-right: 15px;" class="fa fa-shopping-cart"></i>
+            <div layout="column">
+              <h6>{{cart.totalItems}} Item(s)</h6>
+              <h6>${{cart.subtotal}}</h6>
+            </div>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>

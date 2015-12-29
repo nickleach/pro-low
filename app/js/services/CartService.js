@@ -10,22 +10,31 @@ let CartService = function($cookies, $state, $rootScope){
   }
 
   function getCart(){
-    let cart = $cookies.getObject('cart');
-    if(!cart || cart.length < 1){
+    let cartList = $cookies.getObject('cart');
+    if(!cartList || cartList.length < 1){
       $rootScope.hasCart = false;
       return;
     }
     $rootScope.hasCart = true;
-    let cartItems = cart.map((item) => {
+    let cartItems = cartList.map((item) => {
       let cartItem = new Item(item);
       return cartItem;
     });
-    return cartItems;
+
+
+    var cart = {};
+
+    cart.items = cartItems;
+    cart.totalItems = cart.items.reduce((total, item) =>{
+        return total + item.quantity;
+      }, 0);
+
+    return cart;
   }
 
   function setCart(item){
     $rootScope.hasCart = true;
-    let cart = $cookies.getObject('cart');
+    var cart = $cookies.getObject('cart');
     if(!cart){
       cart = [];
     }
@@ -46,11 +55,30 @@ let CartService = function($cookies, $state, $rootScope){
     $cookies.putObject('cart', items);
   }
 
+  function getShippingTiers(){
+    let shipping = {
+      tier1: {
+        quantity: 5,
+        price: 5
+      },
+      tier2: {
+        quantity: 10,
+        price: 10
+      },
+      tier3: {
+        quantity: 20,
+        price: 20
+      }
+    };
+    return shipping;
+  }
+
 
   return{
     getCart : getCart,
     setCart : setCart,
-    updateCart : updateCart
+    updateCart : updateCart,
+    getShippingTiers : getShippingTiers
   };
 
 

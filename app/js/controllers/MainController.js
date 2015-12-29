@@ -1,8 +1,6 @@
 function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state, $mdDialog, CartService, $rootScope){
 
-  $scope.cart = {};
-  $scope.cart.items = CartService.getCart();
-  $scope.cart.shipping = 0;
+  $rootScope.cart = CartService.getCart();
 
   $scope.$watch('cart', function() {
     var subtotal = 0;
