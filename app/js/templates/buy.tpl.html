@@ -8,9 +8,9 @@
           <form ng-submit="addToCart(item, price)" class="col s4">
             <md-input-container>
             <label>Quantity</label>
-              <input ng-model="item.quantity" type="number" step="1" ng-keyup="checkQuantity(item.quantity)" min="1">
+              <input ng-model="item.quantity" style="max-width: 50px; text-align: center;" type="number" step="1" ng-keyup="checkQuantity(item.quantity)" min="1">
             </md-input-container>
-            <p>Price: ${{price}} </p>
+            <p>Price: ${{item.price}} </p>
             <input type="hidden" ng-model="item.title">
             <input type="hidden" ng-model="item.price">
             <md-button>Add to Cart</md-button>

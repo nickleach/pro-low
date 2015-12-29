@@ -15,20 +15,20 @@ function BuyController($scope, $cookies, $state, CartService){
     price: 30.00
   };
 
-  $scope.price = 39.95;
   $scope.item = {
     quantity: 1,
-    title: "The Pro Low Putting System"
+    title: "The Pro Low Putting System",
+    price: 39.95
   };
 
   $scope.checkQuantity = function(quantity) {
 
     if(quantity <= lowTier.quantity){
-      $scope.price = lowTier.price;
+      $scope.item.price = lowTier.price;
     }else if(quantity <= medTier.quantity && quantity > lowTier.quantity){
-      $scope.price = medTier.price;
+      $scope.item.price = medTier.price;
     }else if(quantity > medTier.quantity){
-      $scope.price = highTier.price;
+      $scope.item.price = highTier.price;
     }
 
   };

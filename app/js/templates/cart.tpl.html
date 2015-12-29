@@ -1,7 +1,7 @@
 <div layout="row">
    <md-card  style="width: 700px;">
       <md-card-content>
-      <table class="white striped">
+      <table class="white">
         <thead>
           <tr>
               <th data-field="id">Qty</th>
@@ -11,20 +11,25 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td>{{cart.quantity}}</td>
-            <td>{{cart.title}}</td>
-            <td>{{cart.price}}</td>
+          <tr ng-repeat="c in cart.items">
+            <td><input type="number" step="1" min="1" ng-model="c.quantity" style="max-width: 50px; text-align: center;"></td>
+            <td>{{c.title}}</td>
+            <td>{{c.price}}</td>
+          </tr>
+          <tr style="border-top: 1px solid #D0D0D0;">
+            <td></td>
+            <td class="totals">Subtotal</td>
+            <td>{{cart.subtotal}}</td>
           </tr>
           <tr>
             <td></td>
-            <td>Shipping</td>
-            <td>$0.00</td>
+            <td class="totals">Shipping</td>
+            <td>$ 0.00</td>
           </tr>
            <tr>
             <td></td>
-            <td>Total</td>
-            <td>{{cart.price + cart.shipping }}</td>
+            <td class="totals">Total</td>
+            <td style="font-weight: bolder;"> $ {{cart.price + cart.shipping }}</td>
           </tr>
         </tbody>
       </table>
