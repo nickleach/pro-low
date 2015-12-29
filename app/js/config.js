@@ -55,4 +55,13 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
     });
 
 }
-export default config;
+
+function run(CartService, $rootScope){
+  $rootScope.$on('$stateChangeStart', function () {
+    CartService.getCart();
+  });
+}
+export {
+  config,
+  run
+};

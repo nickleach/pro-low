@@ -1,4 +1,4 @@
-import config from './config';
+import {config, run} from './config';
 import { MainController, LeftCtrl, RightCtrl, DialogCtrl } from './controllers/MainController';
 import BuyController from './controllers/BuyController';
 import MediaController from './controllers/MediaController';
@@ -10,6 +10,7 @@ import CartService from './services/CartService';
 angular
 .module('app', ['ui.router', 'ngMaterial', 'jkuri.gallery' , 'ngCookies'])
 .config(config)
+.run(run)
 .factory('CartService', CartService)
 .controller('MainController', MainController)
 .controller('LeftCtrl', LeftCtrl)

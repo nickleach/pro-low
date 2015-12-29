@@ -198,6 +198,13 @@ md-sidenav.md-locked-open {
   font-weight: bolder;
   text-align: right; }
 
+.cart .remove-btn {
+  min-width: 10px;
+  width: 45px;
+  margin: 0;
+  padding: 5px;
+  border-radius: 10px; }
+
 .table-header {
   text-align: left;
   padding-left: 20px; }

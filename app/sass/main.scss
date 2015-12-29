@@ -6,12 +6,8 @@
 
 $desktop : 992px;
 
-html{
-  // background-color: black;
-}
 body{
   background-color: $blue;
-  // background-color: #172C45;
 }
 .main-content{
   background-color: $blue;
@@ -41,6 +37,8 @@ md-toolbar{
     margin-right: 1vw;
   }
 }
+
+// Side nav settings
 md-sidenav{
   .fa{
     margin-right: 1vw;
@@ -57,7 +55,6 @@ md-sidenav.md-locked-open {
     max-width: 304px;
     height: 100%;
 }
-
 .md-toolbar-tools{
   background-color: #43a047;
 }
@@ -75,16 +72,11 @@ md-sidenav.md-locked-open {
 .fa-long-arrow-left{
   font-size: 25px;
 }
-// .md-sidenav-left{
-//   border-right: 2px solid white;
-// }
-// .md-sidenav-right{
-//   border-left: 2px solid white;
-// }
-// footer{
-//   height:8vh;
-//   background-color: #843940;
-// }
+
+
+
+
+// Home page
 
 .slider-logo{
   margin: 0;
@@ -95,6 +87,8 @@ md-sidenav.md-locked-open {
     text-shadow: 2px 2px 8px black;
   }
 }
+
+// Gallery
 .ng-gallery{
   text-align: center;
   .thumb-holder{
@@ -113,9 +107,20 @@ md-sidenav.md-locked-open {
 }
 
 
+
+// Shopping cart
 .totals{
   font-weight:bolder;
   text-align: right;
+}
+.cart{
+  .remove-btn{
+    min-width: 10px;
+    width: 45px;
+    margin: 0;
+    padding: 5px;
+    border-radius: 10px;
+  }
 }
 
 .table-header{

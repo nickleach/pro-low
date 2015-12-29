@@ -1,4 +1,28 @@
-function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state, $mdDialog){
+function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state, $mdDialog, CartService, $rootScope){
+
+  $scope.cart = {};
+  $scope.cart.items = CartService.getCart();
+  $scope.cart.shipping = 0;
+
+  $scope.$watch('cart', function() {
+    var subtotal = 0;
+    if($scope.cart.items){
+
+    $scope.cart.items.forEach(function(item) {
+      subtotal += item.total();
+    });
+
+
+
+    $scope.cart.subtotal = subtotal.toFixed(2);
+    $scope.cart.total = (subtotal + $scope.cart.shipping).toFixed(2);
+    $scope.cart.totalItems = $scope.cart.items.reduce((total, item) =>{
+        return total + item.quantity;
+      }, 0);
+
+    }
+
+  }, true);
 
   // nav toggles
   $scope.toggleLeft = buildToggler('left');
