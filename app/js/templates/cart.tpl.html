@@ -2,6 +2,9 @@
    <md-card  style="width: 700px;">
       <md-card-content>
       <table class="white">
+            <caption>
+              <h5 class="table-header"><i class="fa fa-shopping-cart"></i>Shopping Cart</h5>
+            </caption>
         <thead>
           <tr>
               <th data-field="id">Qty</th>
@@ -18,22 +21,29 @@
           </tr>
           <tr style="border-top: 1px solid #D0D0D0;">
             <td></td>
-            <td class="totals">Subtotal</td>
+            <td class="totals">Subtotal:</td>
             <td>{{cart.subtotal}}</td>
           </tr>
           <tr>
             <td></td>
-            <td class="totals">Shipping</td>
+            <td class="totals">Shipping:</td>
             <td>$ 0.00</td>
           </tr>
            <tr>
             <td></td>
-            <td class="totals">Total</td>
-            <td style="font-weight: bolder;"> $ {{cart.price + cart.shipping }}</td>
+            <td class="totals">Total:</td>
+            <td style="font-weight: bolder;"> $ {{cart.total}}</td>
           </tr>
         </tbody>
       </table>
-
+      <form class="totals" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_cart">
+        <input type="hidden" name="upload" value="1">
+        <input type="hidden" name="business" value="Aines.kevin@gmail.com">
+        <input type="hidden" name="item_name_1" value="Aggregated items">
+        <input type="hidden" name="amount_1" value="{{cart.total}}">
+        <md-button value="PayPal">Proceed To Checkout</md-button>
+      </form>
     </md-card-content>
   </md-card>
 </div>

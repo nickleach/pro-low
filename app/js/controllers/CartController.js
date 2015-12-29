@@ -10,7 +10,8 @@ let CartController = function($scope, CartService){
       subtotal += item.total();
     });
 
-    $scope.cart.subtotal = subtotal;
+    $scope.cart.subtotal = subtotal.toFixed(2);
+    $scope.cart.total = (subtotal + $scope.cart.shipping).toFixed(2);
   }, true);
 
 };

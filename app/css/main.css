@@ -197,3 +197,9 @@ md-sidenav.md-locked-open {
 .totals {
   font-weight: bolder;
   text-align: right; }
+
+.table-header {
+  text-align: left;
+  padding-left: 20px; }
+  .table-header i {
+    margin-right: 10px; }
