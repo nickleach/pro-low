@@ -19,23 +19,16 @@ let CartService = function($cookies, $state, $rootScope, $http, $log){
       return {};
     }
     $rootScope.hasCart = true;
-    let cartItems = cartList.map((item) => {
+    var cartItems = cartList.map((item) => {
       let cartItem = new Item(item);
       return cartItem;
     });
 
-    for(var i = 0; i < cartItems.length; i ++){
-      var itemNumber = (i + 1);
-      cartItems[i].paypal = {
-        item : "item_name_" + itemNumber,
-        amount: "amount_"+ itemNumber,
-        quantity: "quantity_" + itemNumber
-      };
-    }
+    var paypalItems = addPaypal(cartItems);
 
     var cart = {};
 
-    cart.items = cartItems;
+    cart.items = paypalItems;
     cart.totalItems = cart.items.reduce((total, item) =>{
         return total + item.quantity;
       }, 0);
@@ -60,13 +53,16 @@ let CartService = function($cookies, $state, $rootScope, $http, $log){
     }
     $cookies.putObject('cart', cart);
     $log.debug("Item added to cart", item, cart);
+    $('md-list-item').removeClass('sidenav-active');
+    $('#cart').addClass('sidenav-active');
     $state.go('cart');
   }
 
   function updateCart(items){
     $log.debug('updating cart', items);
-    $cookies.putObject('cart', items);
-    return getCart();
+    var cartItems = addPaypal(items);
+    $cookies.putObject('cart', cartItems);
+    return cartItems;
   }
 
   function getShippingTiers(){
@@ -100,12 +96,50 @@ let CartService = function($cookies, $state, $rootScope, $http, $log){
     }
   }
 
+  function cartWatch(cart, shipping) {
+    var subtotal = 0;
+    if(!_.isEmpty(cart)){
+
+      if(cart.items.length > 0){
+        cart.items.forEach(function(item) {
+          subtotal += item.total();
+        });
+        cart = updateCart(cart.items);
+        cart.totalItems = cart.items.reduce((total, item) =>{
+            return total + item.quantity;
+        }, 0);
+      }
+
+      cart.shipping =  calculateShipping(cart, shipping);
+      cart.subtotal = subtotal.toFixed(2);
+      cart.total = (subtotal + cart.shipping).toFixed(2);
+
+      $log.debug("Cart loaded or updated", cart);
+    }
+
+  }
+
+  function addPaypal(cartItems){
+    for(var i = 0; i < cartItems.length; i ++){
+      var itemNumber = (i + 1);
+      cartItems[i].paypal = {
+        item : "item_name_" + itemNumber,
+        amount: "amount_"+ itemNumber,
+        quantity: "quantity_" + itemNumber
+      };
+    }
+
+    $log.debug("adding paypal info", cartItems);
+    return cartItems;
+  }
+
   return{
     getCart : getCart,
     setCart : setCart,
     updateCart : updateCart,
     getShippingTiers : getShippingTiers,
-    calculateShipping : calculateShipping
+    calculateShipping : calculateShipping,
+    cartWatch : cartWatch
   };
 
 

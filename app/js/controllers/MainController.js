@@ -1,31 +1,33 @@
 function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state, $mdDialog, CartService, $rootScope){
 
-  $rootScope.cart = CartService.getCart();
+$rootScope.shippingTiers = CartService.getShippingTiers();
 
 
-  $scope.$watch('cart', function() {
+ $scope.$watch('cart', function() {
     var subtotal = 0;
     if(!_.isEmpty($rootScope.cart)){
-
-
     if($scope.cart.items.length > 0){
+      $scope.cart.items.forEach(function(item) {
+        subtotal += item.total();
+      });
 
-    $scope.cart.items.forEach(function(item) {
-      subtotal += item.total();
-    });
+     $scope.cart.items = CartService.updateCart($scope.cart.items);
 
-
-
-    $scope.cart.subtotal = subtotal.toFixed(2);
-    $scope.cart.total = (subtotal + $scope.cart.shipping).toFixed(2);
-    $scope.cart.totalItems = $scope.cart.items.reduce((total, item) =>{
-        return total + item.quantity;
+      $scope.cart.totalItems = $scope.cart.items.reduce((total, item) =>{
+          return total + item.quantity;
       }, 0);
 
     }
+
+    $scope.cart.shipping = CartService.calculateShipping($scope.cart, $scope.shippingTiers);
+    $scope.cart.subtotal = subtotal.toFixed(2);
+    $scope.cart.total = (subtotal + $scope.cart.shipping).toFixed(2);
+
+    $log.debug("Cart loaded or updated", $scope.cart);
   }
 
   }, true);
+
 
   // nav toggles
   $scope.toggleLeft = buildToggler('left');
