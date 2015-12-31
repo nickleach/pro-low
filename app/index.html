@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-app="app">
-<div ng-controller="MainController" layout="column" ng-cloak="">
+<div ng-controller="MainController" layout="column" ng-cloak class="main">
 <!--     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2 ng-click="navigateTo('home')">
@@ -42,7 +42,7 @@
         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
         <li><a href="#"><i class="fa fa-youtube"></i></a></li>
         <li ng-show="hasCart" style="border-left: 1px solid white;">
-          <a href="#/cart" layout="row">
+          <a ng-click="navigateTo('cart')" layout="row">
             <i layout="column" style="margin-right: 15px;" class="fa fa-shopping-cart"></i>
             <div layout="column">
               <h6>{{cart.totalItems}} Item(s)</h6>
@@ -143,6 +143,7 @@
 
 </div>
 <footer>
+  <h5>Need footer info</h5>
 </footer>
   <!-- vendors -->
   <script src="dist/vendor.js"></script>

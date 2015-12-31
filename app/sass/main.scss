@@ -9,13 +9,26 @@ $desktop : 992px;
 body{
   background-color: $blue;
 }
+// area above footer
+.main{
+  height: 100%;
+}
+// where route changes
 .main-content{
   background-color: $blue;
 }
 .main-img{
   width: 30vw;
 }
-
+footer{
+  height: 6vh;
+  background-color: darken( $red, 20% );
+  h5{
+    font-size: 2vmin;
+    margin: 0;
+    padding: 0;
+  }
+}
 // if materialize nav
 .brand-logo{
   img{
@@ -88,9 +101,11 @@ md-sidenav.md-locked-open {
   }
 }
 .catchphrases{
-  font-size: 4vmin;
+  font-size: 2.5vw;
+  font-style: italic;
   font-family: 'Serif';
   font-weight: bold;
+  text-align: center;
 }
 // Gallery
 .ng-gallery{
