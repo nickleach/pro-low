@@ -1,4 +1,4 @@
-let CartService = function($cookies, $state, $rootScope, $http){
+let CartService = function($cookies, $state, $rootScope, $http, $log){
 
   const paypal = "https://www.paypal.com/cgi-bin/webscr";
 
@@ -27,7 +27,7 @@ let CartService = function($cookies, $state, $rootScope, $http){
     for(var i = 0; i < cartItems.length; i ++){
       var itemNumber = (i + 1);
       cartItems[i].paypal = {
-        item : "item_" + itemNumber,
+        item : "item_name_" + itemNumber,
         amount: "amount_"+ itemNumber,
         quantity: "quantity_" + itemNumber
       };
@@ -59,10 +59,12 @@ let CartService = function($cookies, $state, $rootScope, $http){
       cart.push(item);
     }
     $cookies.putObject('cart', cart);
+    $log.debug("Item added to cart", item, cart);
     $state.go('cart');
   }
 
   function updateCart(items){
+    $log.debug('updating cart', items);
     $cookies.putObject('cart', items);
     return getCart();
   }
@@ -82,16 +84,17 @@ let CartService = function($cookies, $state, $rootScope, $http){
         price: 20
       }
     };
+    $log.debug("Shipping Tiers", shipping);
     return shipping;
   }
 
   function calculateShipping(cart, tiers){
     if(cart.totalItems >= tiers.tier1.quantity && cart.totalItems < tiers.tier2.quantity){
-    return tiers.tier1.price;
+      return tiers.tier1.price;
     }else if(cart.totalItems >= tiers.tier2.quantity && cart.totalItems < tiers.tier3.quantity){
       return tiers.tier2.price;
     }else if(cart.totalItems > tiers.tier3.quantity ){
-     return tiers.tier3.price;
+      return tiers.tier3.price;
     }else{
       return 0;
     }
@@ -108,6 +111,6 @@ let CartService = function($cookies, $state, $rootScope, $http){
 
 };
 
-CartService.$inject = ['$cookies', '$state', '$rootScope', '$http'];
+CartService.$inject = ['$cookies', '$state', '$rootScope', '$http', '$log'];
 
 export default CartService;

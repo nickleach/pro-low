@@ -2,9 +2,13 @@ function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state, $md
 
   $rootScope.cart = CartService.getCart();
 
+
   $scope.$watch('cart', function() {
     var subtotal = 0;
-    if($scope.cart.items){
+    if(!_.isEmpty($rootScope.cart)){
+
+
+    if($scope.cart.items.length > 0){
 
     $scope.cart.items.forEach(function(item) {
       subtotal += item.total();
@@ -19,6 +23,7 @@ function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state, $md
       }, 0);
 
     }
+  }
 
   }, true);
 

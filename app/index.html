@@ -28,10 +28,10 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo"><img src="assets/logos/nav-logo-white.png" alt="pro low logo"></a>
       <div>
-        <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md="">
+        <md-button aria-label="left menu" ng-click="toggleLeft()" class="md-primary" hide-gt-md="">
           <i class="fa fa-bars"></i>
         </md-button>
-        <md-button id="rightMenu" ng-click="toggleRight()"  hide-gt-md="" class="md-primary">
+        <md-button aria-label="right menu" id="rightMenu" ng-click="toggleRight()"  hide-gt-md="" class="md-primary">
           <i class="fa fa-bars"></i>
         </md-button>
       </div>
@@ -62,7 +62,7 @@
         <h1 class="md-toolbar-tools">Sidenav Left</h1>
       </md-toolbar> -->
       <md-content layout-padding="" ng-controller="LeftCtrl">
-        <md-button ng-click="close()" class="md-primary" hide-gt-md="">
+        <md-button aria-label="collapse menu" ng-click="close()" class="md-primary" hide-gt-md="">
           <i class="fa fa-long-arrow-left"></i>
         </md-button>
         <p hide-md="" show-gt-md="">

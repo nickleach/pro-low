@@ -1,4 +1,5 @@
-function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
+function config($stateProvider, $urlRouterProvider, $mdThemingProvider, $logProvider) {
+  $logProvider.debugEnabled(true);
 
   $urlRouterProvider.otherwise('/');
 
