@@ -1,4 +1,6 @@
-let CartService = function($cookies, $state, $rootScope){
+let CartService = function($cookies, $state, $rootScope, $http){
+
+  const paypal = "https://www.paypal.com/cgi-bin/webscr";
 
   function Item(options){
     this.title = options.title;
@@ -7,13 +9,14 @@ let CartService = function($cookies, $state, $rootScope){
     this.total = function(){
       return (this.quantity * this.price) || 0;
     };
+
   }
 
   function getCart(){
     let cartList = $cookies.getObject('cart');
     if(!cartList || cartList.length < 1){
       $rootScope.hasCart = false;
-      return;
+      return {};
     }
     $rootScope.hasCart = true;
     let cartItems = cartList.map((item) => {
@@ -21,6 +24,14 @@ let CartService = function($cookies, $state, $rootScope){
       return cartItem;
     });
 
+    for(var i = 0; i < cartItems.length; i ++){
+      var itemNumber = (i + 1);
+      cartItems[i].paypal = {
+        item : "item_" + itemNumber,
+        amount: "amount_"+ itemNumber,
+        quantity: "quantity_" + itemNumber
+      };
+    }
 
     var cart = {};
 
@@ -53,6 +64,7 @@ let CartService = function($cookies, $state, $rootScope){
 
   function updateCart(items){
     $cookies.putObject('cart', items);
+    return getCart();
   }
 
   function getShippingTiers(){
@@ -73,17 +85,29 @@ let CartService = function($cookies, $state, $rootScope){
     return shipping;
   }
 
+  function calculateShipping(cart, tiers){
+    if(cart.totalItems >= tiers.tier1.quantity && cart.totalItems < tiers.tier2.quantity){
+    return tiers.tier1.price;
+    }else if(cart.totalItems >= tiers.tier2.quantity && cart.totalItems < tiers.tier3.quantity){
+      return tiers.tier2.price;
+    }else if(cart.totalItems > tiers.tier3.quantity ){
+     return tiers.tier3.price;
+    }else{
+      return 0;
+    }
+  }
 
   return{
     getCart : getCart,
     setCart : setCart,
     updateCart : updateCart,
-    getShippingTiers : getShippingTiers
+    getShippingTiers : getShippingTiers,
+    calculateShipping : calculateShipping
   };
 
 
 };
 
-CartService.$inject = ['$cookies', '$state', '$rootScope'];
+CartService.$inject = ['$cookies', '$state', '$rootScope', '$http'];
 
 export default CartService;

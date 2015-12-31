@@ -42,13 +42,23 @@
           </tr>
         </tbody>
       </table>
-      <form class="totals" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+      <form class="totals" ng-submit="checkout(paypalCart)">
+      <!-- <form class="totals" action="https://www.paypal.com/cgi-bin/webscr" method="post"> -->
         <input type="hidden" name="cmd" value="_cart">
         <input type="hidden" name="upload" value="1">
         <input type="hidden" name="business" value="Aines.kevin@gmail.com">
+
+        <input type="hidden">
         <input type="hidden" name="item_name_1" value="Pro Low Putting System">
         <input type="hidden" name="amount_1" value="{{cart.total}}">
-        <md-button value="PayPal">Proceed To Checkout</md-button>
+
+
+<!--         <input type="hidden" ng-model="paypalCart.cmd">
+        <input type="hidden" ng-model="paypalCart.upload">
+        <input type="hidden" ng-model="paypalCart.business" >
+        <input type="hidden" ng-model="paypalCart.item_name_1">
+        <input type="hidden" ng-model="paypalCart.amount_1"> -->
+        <md-button>Proceed To Checkout</md-button>
       </form>
     </md-card-content>
   </md-card>

@@ -61,7 +61,17 @@ function run(CartService, $rootScope){
     $rootScope.cart = CartService.getCart();
   });
 }
+
+const paypal = {
+
+      username: 'aines.kevin_api1.gmail.com',
+      password: 'T6X9DR2B77BQ4YWK',
+      credential: 'API Signature',
+      signature: 'AFcWxV21C7fd0v3bYYYRCpSSRl31A2EEhAzWzlxq-EzEQtoZMqScR6xI'
+
+  };
 export {
+  paypal,
   config,
   run
 };
