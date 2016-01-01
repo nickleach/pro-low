@@ -97,6 +97,48 @@
 .red-font {
   color: #ed2b33; }
 
+.blue-back {
+  background-color: #1D3C7C; }
+
+.blue-card {
+  background-color: #1D557C; }
+
+.white {
+  background-color: #fefefe; }
+
+.cardinal {
+  background-color: #931e42; }
+
+.punch {
+  background-color: #b92c28; }
+
+.sundown {
+  background-color: #f7b3b6; }
+
+.red {
+  background-color: #ed2b33; }
+
+.flamingo {
+  background-color: #f05c62; }
+
+.cupid {
+  background-color: #f6b7ba; }
+
+.apple {
+  background-color: #54aa3a; }
+
+.mantis {
+  background-color: #81c252; }
+
+.ironbark {
+  background-color: #68502a; }
+
+.highland {
+  background-color: #809a53; }
+
+.rainforest {
+  background-color: #637f2e; }
+
 md-list md-list-item button.md-button:not([disabled]):hover {
   background-color: transparent; }
 
@@ -123,7 +165,12 @@ md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-ta
   color: black; }
 
 .slider .slides li img {
-  background-size: 100%; }
+  background-size: 100%;
+  background-repeat-y: no-repeat;
+  background-color: transparent; }
+
+.slider .slides {
+  background-color: transparent; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
@@ -188,6 +235,9 @@ footer {
 .nav-wrapper {
   background-color: #54aa3a; }
 
+.nav-wrapper a:hover {
+  cursor: pointer; }
+
 md-toolbar .fa {
   margin-right: 1vw; }
 
@@ -222,7 +272,11 @@ md-sidenav.md-locked-open {
   font-size: 25px; }
 
 .slider-logo {
-  margin: 0; }
+  margin: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 200px; }
 
 .slider .cursive {
   text-shadow: 2px 2px 8px black; }
@@ -233,6 +287,25 @@ md-sidenav.md-locked-open {
   font-family: 'Serif';
   font-weight: bold;
   text-align: center; }
+
+@media (max-width: 800px) {
+  .indicators {
+    display: none; } }
+
+@media (max-width: 800px) {
+  .caption .header-text {
+    font-size: 25px;
+    margin-top: 50px; }
+  .caption .cursive {
+    font-size: 18px; } }
+
+.my-content {
+  max-width: 800px;
+  min-width: 700px; }
+  @media (max-width: 800px) {
+    .my-content {
+      max-width: 400px;
+      min-width: 200px; } }
 
 .ng-gallery {
   text-align: center; }
