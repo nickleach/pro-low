@@ -48,6 +48,7 @@
         <input type="hidden" name="business" value="Aines.kevin@gmail.com">
         <input type="hidden" ng-repeat="c in cart.items" name="{{c.paypal.item}}" value="{{c.title}}">
         <input type="hidden" ng-repeat="c in cart.items" name="{{c.paypal.quantity}}" value="{{c.quantity}}">
+        <input type="hidden" ng-repeat="c in cart.items" name="{{c.paypal.shipping}}" value="{{c.shipping}}">
         <input type="hidden" ng-repeat="c in cart.items" name="{{c.paypal.amount}}" value="{{c.price}}">
         <md-button value="PayPal">Proceed To Checkout</md-button>
       </form>

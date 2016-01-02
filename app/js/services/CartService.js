@@ -85,15 +85,24 @@ let CartService = function($cookies, $state, $rootScope, $http, $log){
   }
 
   function calculateShipping(cart, tiers){
-    if(cart.totalItems >= tiers.tier1.quantity && cart.totalItems < tiers.tier2.quantity){
-      return tiers.tier1.price;
-    }else if(cart.totalItems >= tiers.tier2.quantity && cart.totalItems < tiers.tier3.quantity){
-      return tiers.tier2.price;
-    }else if(cart.totalItems > tiers.tier3.quantity ){
-      return tiers.tier3.price;
-    }else{
-      return 0;
-    }
+    cart.items.forEach((item) =>{
+    if(item.quantity >= tiers.tier1.quantity && item.quantity < tiers.tier2.quantity){
+        item.shipping = tiers.tier1.price;
+      }else if(item.quantity >= tiers.tier2.quantity && item.quantity < tiers.tier3.quantity){
+        item.shipping = tiers.tier2.price;
+      }else if(item.quantity > tiers.tier3.quantity ){
+        item.shipping = tiers.tier3.price;
+      }else{
+        item.shipping = 0;
+      }
+    });
+
+    cart.shipping = cart.items.reduce((total, item) =>{
+      return total + item.shipping;
+    }, 0);
+
+    return cart;
+
   }
 
   function cartWatch(cart, shipping) {
@@ -125,7 +134,8 @@ let CartService = function($cookies, $state, $rootScope, $http, $log){
       cartItems[i].paypal = {
         item : "item_name_" + itemNumber,
         amount: "amount_"+ itemNumber,
-        quantity: "quantity_" + itemNumber
+        quantity: "quantity_" + itemNumber,
+        shipping : "shipping_" + itemNumber
       };
     }
 
