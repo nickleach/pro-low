@@ -164,11 +164,6 @@ md-card {
 md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {
   color: black; }
 
-.slider .slides li img {
-  background-size: 100%;
-  background-repeat-y: no-repeat;
-  background-color: transparent; }
-
 .slider .slides {
   background-color: transparent; }
 
@@ -271,12 +266,10 @@ md-sidenav.md-locked-open {
 .fa-long-arrow-left {
   font-size: 25px; }
 
-.slider-logo {
-  margin: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 400px;
-  height: 200px; }
+@media (max-width: 800px) {
+  .slider-logo {
+    width: 55vw !important;
+    height: 20vh !important; } }
 
 .slider .cursive {
   text-shadow: 2px 2px 8px black; }
@@ -287,17 +280,6 @@ md-sidenav.md-locked-open {
   font-family: 'Serif';
   font-weight: bold;
   text-align: center; }
-
-@media (max-width: 800px) {
-  .indicators {
-    display: none; } }
-
-@media (max-width: 800px) {
-  .caption .header-text {
-    font-size: 25px;
-    margin-top: 50px; }
-  .caption .cursive {
-    font-size: 18px; } }
 
 .my-content {
   max-width: 800px;

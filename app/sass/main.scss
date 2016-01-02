@@ -96,10 +96,10 @@ md-sidenav.md-locked-open {
 // Home page
 
 .slider-logo{
-  margin: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 400px; height: 200px;
+  @include breakpoint($handheld){
+    width: 55vw !important;
+    height: 20vh !important;
+  }
 }
 .slider{
   .cursive{
@@ -113,23 +113,23 @@ md-sidenav.md-locked-open {
   font-weight: bold;
   text-align: center;
 }
-.indicators{
-  @include breakpoint($handheld){
-    display: none;
-  }
-}
+// .indicators{
+//   @include breakpoint($handheld){
+//     display: none;
+//   }
+// }
 
-.caption{
-  @include breakpoint($handheld){
-    .header-text{
-      font-size: 25px;
-      margin-top: 50px;
-    }
-    .cursive{
-      font-size: 18px;
-    }
-  }
-}
+// .caption{
+//   @include breakpoint($handheld){
+//     .header-text{
+//       font-size: 25px;
+//       margin-top: 50px;
+//     }
+//     .cursive{
+//       font-size: 18px;
+//     }
+//   }
+// }
 
 .my-content{
   max-width: 800px;
