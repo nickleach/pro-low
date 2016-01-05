@@ -60,6 +60,7 @@ let CartService = function($cookies, $state, $rootScope, $http, $log){
 
   function updateCart(items){
     $log.debug('updating cart', items);
+
     var cartItems = addPaypal(items);
     $cookies.putObject('cart', cartItems);
     return cartItems;
