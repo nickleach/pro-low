@@ -1,6 +1,8 @@
-let CartService = function($cookies, $state, $rootScope, $http, $log){
+let CartService = function($cookies, $state, $rootScope, $http, $log, API){
 
   const paypal = "https://www.paypal.com/cgi-bin/webscr";
+
+  // item constructor
 
   function Item(options){
     this.title = options.title;
@@ -10,6 +12,14 @@ let CartService = function($cookies, $state, $rootScope, $http, $log){
       return (this.quantity * this.price) || 0;
     };
 
+  }
+
+  function getItems(){
+    return $http.get(`${API.URL}items`);
+  }
+
+  function getSingleItem(item){
+    return $http.get(`${API.URL}items/${item}`);
   }
 
   function getCart(){
@@ -144,13 +154,15 @@ let CartService = function($cookies, $state, $rootScope, $http, $log){
     return cartItems;
   }
 
-  return{
-    getCart : getCart,
-    setCart : setCart,
-    updateCart : updateCart,
-    getShippingTiers : getShippingTiers,
-    calculateShipping : calculateShipping,
-    cartWatch : cartWatch
+  return {
+    getItems,
+    getSingleItem,
+    getCart,
+    setCart,
+    updateCart,
+    getShippingTiers,
+    calculateShipping,
+    cartWatch
   };
 
 

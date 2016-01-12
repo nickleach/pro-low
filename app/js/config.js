@@ -64,15 +64,23 @@ function run(CartService, $rootScope){
 }
 
 const paypal = {
-
       username: 'aines.kevin_api1.gmail.com',
       password: 'T6X9DR2B77BQ4YWK',
       credential: 'API Signature',
       signature: 'AFcWxV21C7fd0v3bYYYRCpSSRl31A2EEhAzWzlxq-EzEQtoZMqScR6xI'
+};
 
-  };
+const API = {
+  URL: 'admin.prolowputting.com/api',
+  CONFIG: {
+    headers:{
+
+    }
+  }
+};
 export {
   paypal,
   config,
-  run
+  run,
+  API
 };

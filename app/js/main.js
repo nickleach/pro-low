@@ -1,4 +1,4 @@
-import {config, run, paypal} from './config';
+import {config, run, paypal, API} from './config';
 import { MainController, LeftCtrl, RightCtrl, DialogCtrl } from './controllers/MainController';
 import BuyController from './controllers/BuyController';
 import MediaController from './controllers/MediaController';
@@ -6,13 +6,18 @@ import CartController from './controllers/CartController';
 import ContactController from './controllers/ContactController';
 import TestimonialController from './controllers/TestimonialController';
 import CartService from './services/CartService';
+import TestimonialService from './services/TestimonialService';
+import UserService from './services/UserService';
 
 angular
 .module('app', ['ui.router', 'ngMaterial', 'jkuri.gallery' , 'ngCookies'])
 .config(config)
 .constant('PAYPAL', paypal)
+.constant('API', API)
 .run(run)
 .factory('CartService', CartService)
+.factory('TestimonialService', TestimonialService)
+.factory('UserService', UserService)
 .controller('MainController', MainController)
 .controller('LeftCtrl', LeftCtrl)
 .controller('RightCtrl', RightCtrl)
