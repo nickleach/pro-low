@@ -1,1 +1,60 @@
-<p class="white-font">Testimonials coming soon. Stay posted...</p>
+<div class="valign-wrapper" style="height: 70vmin;" ng-if="errorMessage" ng-hide="loadingTestimonials">
+  {{errorMessage}}
+</div>
+<div class="valign-wrapper" style="height: 70vmin;" ng-show="loadingTestimonials">
+    <div class="valign preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+</div>
+<md-content class="my-content" ng-if="!errorMessage" ng-hide="loadingTestimonials">
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="t in testimonials">
+       <i class="fa fa-user"></i>
+       <!--  <img ng-src="{{t.image}}?{{$index}}" class="face" alt="{{t.author}}"> -->
+        <div class="md-list-item-text">
+          <h3>{{t.title}}</h3>
+          <h4>{{t.author}}</h4>
+          <p>{{t.testimonial}}</p>
+        </div>
+        <md-divider md-inset ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-content>

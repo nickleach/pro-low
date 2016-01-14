@@ -319,3 +319,13 @@ md-sidenav.md-locked-open {
   padding-left: 20px; }
   .table-header i {
     margin-right: 10px; }
+
+.face {
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  width: 48px;
+  margin: 16px; }
+
+.fa-user {
+  font-size: 6vmin;
+  margin: 4vmin; }
