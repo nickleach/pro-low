@@ -57,8 +57,9 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider, $logProv
 
 }
 
-function run(CartService, $rootScope){
+function run(CartService, UserService, $rootScope){
   $rootScope.$on('$stateChangeStart', function () {
+    UserService.checkUser();
     $rootScope.cart = CartService.getCart();
   });
 }
@@ -71,7 +72,7 @@ const paypal = {
 };
 
 const API = {
-  URL: 'admin.prolowputting.com/api',
+  URL: 'http://admin.prolowputting.com/api',
   CONFIG: {
     headers:{
 

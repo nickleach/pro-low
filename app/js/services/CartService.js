@@ -15,11 +15,11 @@ let CartService = function($cookies, $state, $rootScope, $http, $log, API){
   }
 
   function getItems(){
-    return $http.get(`${API.URL}items`);
+    return $http.get(`${API.URL}/items`);
   }
 
   function getSingleItem(item){
-    return $http.get(`${API.URL}items/${item}`);
+    return $http.get(`${API.URL}/items/${item}`);
   }
 
   function getCart(){
