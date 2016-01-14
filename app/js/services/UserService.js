@@ -1,8 +1,19 @@
 let UserService = function($http, API, $cookies, $state, $rootScope){
 
+  function getUserInfo(){
+    $http.get(`${API.URL}/me`)
+      .success((data) => {
+        $rootScope.userName = data.name;
+        $rootScope.userItems = data.items;
+      });
+  }
+
   function checkUser(){
     const token = $cookies.get('token');
-    _setToken(token);
+    if(token){
+      getUserInfo();
+      _setToken(token);
+    }
   }
 
   function _setToken(token){
