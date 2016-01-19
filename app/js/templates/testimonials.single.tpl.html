@@ -1,7 +1,7 @@
-<div class="valign-wrapper" style="height: 70vmin;" ng-if="errorMessage" ng-hide="loadingTestimonials">
+<div class="valign-wrapper" style="height: 15vmin;" ng-if="errorMessage" ng-hide="loadingTestimonial">
   {{errorMessage}}
 </div>
-<div class="valign-wrapper" style="height: 70vmin;" ng-show="loadingTestimonials">
+<div class="valign-wrapper" style="height: 15vmin;" ng-show="loadingTestimonial">
     <div class="valign preloader-wrapper big active">
       <div class="spinner-layer spinner-blue">
         <div class="circle-clipper left">
@@ -44,23 +44,13 @@
       </div>
     </div>
 </div>
-<div ng-if="!errorMessage" ng-hide="loadingTestimonials">
-  <h5 class="header-text red-font center">Testimonials</h5>
-  <div ui-view>
-  <p class="white-font center">Love your Pro Low? <a href="#/testimonials/add">Click here</a> to share your experience!</p>
-    <md-content class="my-content">
-      <md-list>
-        <md-list-item class="md-3-line" ng-repeat="t in testimonials | filter:{approved:true}" ng-click="goToSingle(t._id)">
-         <i class="fa fa-user" ng-hide="t.image"></i>
-          <img ng-show="t.image" ng-src="{{t.image}}?{{$index}}" class="face" alt="{{t.author}}">
-          <div class="md-list-item-text testimonial-list">
-            <h3><strong>{{t.title}}</strong></h3>
-            <h4>{{t.author}}</h4>
-            <p>{{t.testimonial}}</p>
-          </div>
-          <md-divider md-inset ng-if="!$last"></md-divider>
-        </md-list-item>
-      </md-list>
-    </md-content>
-  </div>
+<div ng-if="!errorMessage" ng-hide="loadingTestimonial">
+  <md-card class="my-content">
+    <md-card-content>
+      <h5 class="center">{{testimonial.title}}</h5>
+      <h6 class="center">By {{testimonial.author}}</h6>
+      <p>{{testimonial.testimonial}}</p>
+    </md-card-content>
+  </md-card>
+  <p class="white-font center"><a href="#/testimonials">Click here</a> to go back to testimonials</p>
 </div>

@@ -1,0 +1,41 @@
+<md-card layout-padding ng-hide="addingTestimonial">
+    <md-card-content>
+    <h5>Add new Testimonial</h5>
+      <div class="row">
+        <form class="col s12" ng-submit="addTestimonial(testimonial)">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_telephone" type="text" class="validate" ng-model="testimonial.author">
+              <label for="icon_telephone">Your Name</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="prefix fa fa-book"></i>
+              <input id="title" type="text" class="validate" ng-model="testimonial.title">
+              <label for="title">Title</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="prefix fa fa-picture-o"></i>
+              <input id="icon_prefix" type="text" class="validate" ng-model="testimonial.image">
+              <label for="icon_prefix">Image Url (optional)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mode_edit</i>
+              <textarea id="icon_prefix2" class="materialize-textarea" ng-model="testimonial.testimonial"></textarea>
+              <label for="icon_prefix2">Your Story</label>
+            </div>
+          </div>
+          <input type="hidden" ng-model="testmionial.approved" ng-init="testimonial.approved = false">
+          <input type="hidden" ng-model="testmonial.customerCreated" ng-init="testimonial.customerCreated = true">
+          <md-button>Submit</md-button>
+        </form>
+      </div>
+    </md-card-content>
+  </md-card>
+<div ng-show="testimonialAdded && addedTestimonialMessage">
+  <p class="white-font">{{addedTestimonialMessage}}</p>
+</div>
