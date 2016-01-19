@@ -168,6 +168,6 @@ let CartService = function($cookies, $state, $rootScope, $http, $log, API){
 
 };
 
-CartService.$inject = ['$cookies', '$state', '$rootScope', '$http', '$log'];
+CartService.$inject = ['$cookies', '$state', '$rootScope', '$http', '$log', 'API'];
 
 export default CartService;

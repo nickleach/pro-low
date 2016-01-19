@@ -1,4 +1,9 @@
-function BuyController($scope, $cookies, $state, CartService){
+function BuyController($scope, $cookies, $state, CartService, $log){
+
+  CartService.getItems().success((data) =>{
+    $log.debug('items', data);
+    $scope.items = data;
+  });
 
   let lowTier = {
     quantity : 4,
