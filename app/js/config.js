@@ -63,6 +63,11 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider, $logProv
       url: '/contact',
       templateUrl: 'js/templates/contact.tpl.html',
       controller: 'ContactCtrl'
+    })
+    .state('wholesaleRequest', {
+      url: '/wholesaleRequest',
+      templateUrl: 'js/templates/wholesaleRequest.tpl.html',
+      controller: 'ContactCtrl'
     });
 
 }

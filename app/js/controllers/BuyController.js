@@ -1,39 +1,32 @@
 function BuyController($scope, $cookies, $state, CartService, $log){
+  let
+    lowTier,
+    medTier,
+    highTier;
 
   CartService.getItems().success((data) =>{
     $log.debug('items', data);
-    $scope.items = data;
+    const itemData = data.map((i) => {
+      i.price = i.basePrice;
+      return i;
+    });
+    $scope.items = itemData;
   });
 
-  let lowTier = {
-    quantity : 4,
-    price : 39.95
-  };
+  // $scope.item = {
+  //   quantity: 1,
+  //   title: "The Pro Low Putting System",
+  //   price: 39.95
+  // };
 
-  let medTier = {
-    quantity : 9,
-    price : 35.00
-  };
+  $scope.checkQuantity = function(item) {
 
-  let highTier = {
-    quantity : 15,
-    price: 30.00
-  };
-
-  $scope.item = {
-    quantity: 1,
-    title: "The Pro Low Putting System",
-    price: 39.95
-  };
-
-  $scope.checkQuantity = function(quantity) {
-
-    if(quantity <= lowTier.quantity){
-      $scope.item.price = lowTier.price;
-    }else if(quantity <= medTier.quantity && quantity > lowTier.quantity){
-      $scope.item.price = medTier.price;
-    }else if(quantity > medTier.quantity){
-      $scope.item.price = highTier.price;
+    if(item.quantity > item.pricingTiers[0].quantity){
+      item.price = item.pricingTiers[0].price;
+    }else if(item.quantity >= item.pricingTiers[1].quantity && quantity < item.pricingTiers[2].quantity){
+      item.price = item.pricingTiers[1].price;
+    }else if(item.quantity > item.pricingTiers[2].quantity){
+      item.price = item.pricingTiers[2].price;
     }
 
   };

@@ -9,9 +9,9 @@
           <form ng-submit="addToCart(item, price)" class="col s4">
             <md-input-container>
             <label>Quantity</label>
-              <input ng-model="item.quantity" style="max-width: 50px; text-align: center;" type="number" step="1" ng-keyup="checkQuantity(item.quantity)" min="1" ng-init="item.quantity = 1">
+              <input ng-model="item.quantity" style="max-width: 50px; text-align: center;" type="number" step="1" ng-keyup="checkQuantity(item)" min="1" ng-init="item.quantity = 1">
             </md-input-container>
-            <p>Price: ${{item.basePrice}} </p>
+            <p>Price: ${{item.price}} </p>
             <input type="hidden" ng-model="item.title">
             <input type="hidden" ng-model="item.basePrice">
             <md-button>Add to Cart</md-button>
@@ -34,8 +34,8 @@
             </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="email" type="email" class="validate">
-                  <label for="email">Email</label>
+                  <input id="username" type="text" class="validate">
+                  <label for="username">Username</label>
                 </div>
               </div>
               <div class="row">
@@ -46,7 +46,7 @@
             </div>
             <md-button>Log in</md-button>
           </form>
-          <p>Interested in purchasing wholesale? <a href="#">Click Here</a> to fill out an application.</p>
+          <p>Interested in purchasing wholesale? <a href="#/wholesaleRequest">Click Here</a> to fill out an application.</p>
         </md-content>
       </md-tab>
     </md-tabs>
