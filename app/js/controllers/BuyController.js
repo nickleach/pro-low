@@ -1,18 +1,42 @@
 function BuyController($scope, $cookies, $state, CartService, $log){
-  let
-    lowTier,
-    medTier,
-    highTier;
 
-  CartService.getItems().success((data) =>{
+  $scope.loading = true;
+
+  CartService.getItems()
+    .success((data) =>{
     $log.debug('items', data);
-    const itemData = data.map((i) => {
-      i.price = i.basePrice;
-      return i;
-    });
-    $scope.items = itemData;
-  });
+      const itemData = data.map((i) => {
+        i.price = i.basePrice;
+        return i;
+      });
 
+      $scope.items = itemData;
+      $scope.loading = false;
+    })
+    .error(() => {
+      $scope.items = [
+        {
+          title: "The Pro Low Putting System",
+          basePrice: 39.95,
+          price: 39.95,
+          pricingTiers: [
+            {
+              price: 39.95,
+              quantity: 5
+            },
+            {
+              price: 39.95,
+              quantity: 10
+            },
+            {
+              price: 39.95,
+              quantity: 15
+            }
+          ]
+        }
+      ];
+      $log.error('Error loading items, defaulting to item defaults', $scope.items);
+    });
   // $scope.item = {
   //   quantity: 1,
   //   title: "The Pro Low Putting System",

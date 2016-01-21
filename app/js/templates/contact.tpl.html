@@ -9,7 +9,8 @@
         <p>Or fill out the form below...</p>
     </md-card-content>
   </md-card>
-  <md-card layout-padding>
+  <my-loader ng-show="loading"></my-loader>
+  <md-card  ng-hide="loading || message" layout-padding>
     <md-card-content>
       <div class="row">
         <form class="col s12" ng-submit="contactUs(contact)">
@@ -48,3 +49,4 @@
       </div>
     </md-card-content>
   </md-card>
+  <p class="white-font" ng-show="message">{{message}}</p>

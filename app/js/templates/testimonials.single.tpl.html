@@ -1,49 +1,7 @@
 <div class="valign-wrapper" style="height: 15vmin;" ng-if="errorMessage" ng-hide="loadingTestimonial">
   {{errorMessage}}
 </div>
-<div class="valign-wrapper" style="height: 15vmin;" ng-show="loadingTestimonial">
-    <div class="valign preloader-wrapper big active">
-      <div class="spinner-layer spinner-blue">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
-
-      <div class="spinner-layer spinner-red">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
-
-      <div class="spinner-layer spinner-yellow">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
-
-      <div class="spinner-layer spinner-green">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
-    </div>
-</div>
+<my-loader ng-show="loadingTestimonial"></my-loader>
 <div ng-if="!errorMessage" ng-hide="loadingTestimonial">
   <md-card class="my-content">
     <md-card-content>

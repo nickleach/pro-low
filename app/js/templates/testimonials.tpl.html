@@ -1,53 +1,12 @@
 <div class="valign-wrapper" style="height: 70vmin;" ng-if="errorMessage" ng-hide="loadingTestimonials">
   {{errorMessage}}
 </div>
-<div class="valign-wrapper" style="height: 70vmin;" ng-show="loadingTestimonials">
-    <div class="valign preloader-wrapper big active">
-      <div class="spinner-layer spinner-blue">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
-
-      <div class="spinner-layer spinner-red">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
-
-      <div class="spinner-layer spinner-yellow">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
-
-      <div class="spinner-layer spinner-green">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
-    </div>
-</div>
+<my-loader ng-show="loadingTestimonials"></my-loader>
 <div ng-if="!errorMessage" ng-hide="loadingTestimonials">
   <h5 class="header-text red-font center">Testimonials</h5>
   <div ui-view>
-  <p class="white-font center">Love your Pro Low? <a href="#/testimonials/add">Click here</a> to share your experience!</p>
+  <p ng-if="testimonials.length > 1" class="white-font center">Love your Pro Low? <a href="#/testimonials/add">Click here</a> to share your experience!</p>
+  <p class="white-font center" ng-if="testimonials.length < 1">Testimonials coming soon! <a href="#/testimonials/add">Click here to add yours!</a></p>
     <md-content class="my-content">
       <md-list>
         <md-list-item class="md-3-line" ng-repeat="t in testimonials | filter:{approved:true}" ng-click="goToSingle(t._id)">
@@ -64,3 +23,4 @@
     </md-content>
   </div>
 </div>
+

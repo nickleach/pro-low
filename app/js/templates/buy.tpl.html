@@ -1,5 +1,6 @@
-<div ng-cloak="" class="buy-tabs" ng-app="MyApp">
-  <md-content>
+<div ng-cloak="" class="buy-tabs">
+<my-loader ng-show="loading"></my-loader>
+  <md-content ng-hide="loading">
     <md-tabs class="my-content" md-dynamic-height="" md-border-bottom="">
       <md-tab label="Buy Now">
         <md-content class="md-padding">

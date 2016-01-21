@@ -8,13 +8,14 @@ import { TestimonialController, TestimonialSingleCtrl } from './controllers/Test
 import CartService from './services/CartService';
 import TestimonialService from './services/TestimonialService';
 import UserService from './services/UserService';
-
+import loading from './directives/loading';
 angular
 .module('app', ['ui.router', 'ngMaterial', 'jkuri.gallery' , 'ngCookies'])
 .config(config)
 .constant('PAYPAL', paypal)
 .constant('API', API)
 .run(run)
+.directive('myLoader', [loading])
 .factory('CartService', CartService)
 .factory('TestimonialService', TestimonialService)
 .factory('UserService', UserService)

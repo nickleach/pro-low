@@ -11,7 +11,8 @@
   </md-card> -->
   <h5 class="header-text red-font">Wholesale Request Form</h5>
   <p class="center white-font">Have any questions? Feel free to <a href="#/contact">Contact Us</a>.</p>
-  <md-card layout-padding class="my-content">
+  <my-loader ng-show="loading"></my-loader>
+  <md-card ng-hide="loading || message" layout-padding class="my-content">
     <md-card-content>
       <div class="row">
         <form class="col s12" ng-submit="wholesaleRequest(request)">
@@ -86,3 +87,4 @@
       </div>
     </md-card-content>
   </md-card>
+  <p class="white-font" ng-if="message">{{message}}</p>

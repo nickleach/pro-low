@@ -26,7 +26,7 @@ let UserService = function($http, API, $cookies, $state, $rootScope){
   }
 
   function wholesaleRequest(email){
-    return $http.post(`${API.URL}/wholesale`, email);
+    return $http.post(`${API.URL}/contact/wholesale`, email);
   }
 
   function contact(email){
