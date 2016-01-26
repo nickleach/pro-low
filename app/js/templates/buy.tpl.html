@@ -28,20 +28,20 @@
         </md-content>
       </md-tab>
       <md-tab label="Wholesale Program">
-        <md-content class="md-padding col s6">
+        <md-content class="md-padding col s6" ng-controller="UserController">
           <h1 class="md-display-2 cursive red-font">Wholesale Buyers</h1>
-          <form>
+          <form ng-submit="loginWholesaleUser(wholesaleUser)">
             <div class="col s4">
             </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="username" type="text" class="validate">
+                  <input id="username" type="text" class="validate" ng-model="wholesaleUser.username">
                   <label for="username">Username</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="password" type="password" class="validate">
+                  <input id="password" type="password" class="validate" ng-model="wholesaleUser.password">
                   <label for="password">Password</label>
                 </div>
             </div>

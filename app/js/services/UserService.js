@@ -1,17 +1,12 @@
-let UserService = function($http, API, $cookies, $state, $rootScope){
+let UserService = function($http, API, $cookies, $state, $rootScope, $log){
 
   function getUserInfo(){
-    $http.get(`${API.URL}/me`)
-      .success((data) => {
-        $rootScope.userName = data.name;
-        $rootScope.userItems = data.items;
-      });
+    return $http.get(`${API.URL}/me`, API.CONFIG);
   }
 
   function checkUser(){
     const token = $cookies.get('token');
     if(token){
-      getUserInfo();
       _setToken(token);
     }
   }
@@ -42,6 +37,14 @@ let UserService = function($http, API, $cookies, $state, $rootScope){
 
   function _successLog(data){
     $cookies.put('token', data.token);
+    $log.debug('Logged in!', data);
+    getUserInfo()
+      .success((userData) =>{
+        $log.debug('User data', userData);
+        $cookies.put('items', userData.items);
+        $cookies.put('username', userData.username);
+      });
+    $state.go('buyWholesale');
   }
 
   function _updateUser(userId, user){

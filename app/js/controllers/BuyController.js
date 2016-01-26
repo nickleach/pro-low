@@ -37,11 +37,7 @@ function BuyController($scope, $cookies, $state, CartService, $log){
       ];
       $log.error('Error loading items, defaulting to item defaults', $scope.items);
     });
-  // $scope.item = {
-  //   quantity: 1,
-  //   title: "The Pro Low Putting System",
-  //   price: 39.95
-  // };
+
 
   $scope.checkQuantity = function(item) {
 

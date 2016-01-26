@@ -1,5 +1,5 @@
 function config($stateProvider, $urlRouterProvider, $mdThemingProvider, $logProvider) {
-  $logProvider.debugEnabled(false);
+  $logProvider.debugEnabled(true);
 
   $urlRouterProvider.otherwise('/');
 
@@ -68,6 +68,11 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider, $logProv
       url: '/wholesaleRequest',
       templateUrl: 'js/templates/wholesaleRequest.tpl.html',
       controller: 'ContactCtrl'
+    })
+    .state('buyWholesale', {
+      url: '/buyWholesale',
+      templateUrl: 'js/templates/buyWholesale.tpl.html',
+      controller: 'WholesaleController'
     });
 
 }

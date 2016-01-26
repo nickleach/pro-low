@@ -4,6 +4,8 @@ import BuyController from './controllers/BuyController';
 import MediaController from './controllers/MediaController';
 import CartController from './controllers/CartController';
 import ContactController from './controllers/ContactController';
+import UserController from './controllers/UserController';
+import WholesaleController from './controllers/WholesaleController';
 import { TestimonialController, TestimonialSingleCtrl } from './controllers/TestimonialController';
 import CartService from './services/CartService';
 import TestimonialService from './services/TestimonialService';
@@ -24,8 +26,10 @@ angular
 .controller('RightCtrl', RightCtrl)
 .controller('DialogCtrl', DialogCtrl)
 .controller('BuyCtrl', BuyController)
+.controller('WholesaleController', WholesaleController)
 .controller('MediaController', MediaController)
 .controller('CartController', CartController)
+.controller('UserController', UserController)
 .controller('ContactCtrl', ContactController)
 .controller('TestimonialController', TestimonialController)
 .controller('TestimonialSingleCtrl', TestimonialSingleCtrl);
