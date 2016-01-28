@@ -37,14 +37,16 @@ let UserService = function($http, API, $cookies, $state, $rootScope, $log){
 
   function _successLog(data){
     $cookies.put('token', data.token);
-    $log.debug('Logged in!', data);
+    $cookies.put('userId', data.id);
+    _setToken(data.token);
     getUserInfo()
       .success((userData) =>{
         $log.debug('User data', userData);
-        $cookies.put('items', userData.items);
+        $cookies.putObject('items', userData.items);
         $cookies.put('username', userData.username);
       });
     $state.go('buyWholesale');
+    $log.debug('Logged in!', data);
   }
 
   function _updateUser(userId, user){
@@ -78,7 +80,8 @@ let UserService = function($http, API, $cookies, $state, $rootScope, $log){
     _updateUser,
     _getUser,
     _deleteUser,
-    forgotPassword
+    forgotPassword,
+    getUserInfo
 
   };
 };
