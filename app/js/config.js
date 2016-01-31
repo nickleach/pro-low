@@ -73,6 +73,11 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider, $logProv
       url: '/buyWholesale',
       templateUrl: 'js/templates/buyWholesale.tpl.html',
       controller: 'WholesaleController'
+    })
+    .state('buyWholesale.edit', {
+      url: '/editProfile',
+      templateUrl: 'js/templates/edit.tpl.html',
+      controller: 'UserController'
     });
 
 }

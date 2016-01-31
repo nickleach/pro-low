@@ -139,6 +139,14 @@ md-sidenav.md-locked-open {
     min-width: 200px;
   }
 }
+.my-content-row{
+  max-width: 500px;
+  min-width: 300px;
+  @include breakpoint($handheld){
+    max-width: 200px;
+    min-width: 100px;
+  }
+}
 // Gallery
 .ng-gallery{
   text-align: center;
@@ -194,4 +202,13 @@ md-sidenav.md-locked-open {
 }
 .testimonial-list{
   height: 7vh;
+}
+
+
+// wholesale customer
+.profile{
+  border-radius: 120px;
+  border: 1px solid lightgrey;
+  padding: 20px;
+  // font-size: 50px;
 }

@@ -1,4 +1,31 @@
-<md-card>
-  <md-card-content>
-  </md-card-content>
-</md-card>
+<h5 class="white-font">Welcome back, {{userData.name}}!</h5>
+<div layout="row">
+  <md-card class="my-content-row" flex="50">
+    <md-card-content>
+     <h1 class="md-display-2 cursive red-font">Buy Now</h1>
+      <div layout="row" layout-sm="column" layout-align="space-around" ng-show="!userItems">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+      </div>
+      <ul>
+        <li ng-repeat="i in userItems">
+          <h6>{{i.title}}</h6>
+        </li>
+      </ul>
+    </md-card-content>
+  </md-card>
+  <md-card class="my-content-row" flex="50" ui-view>
+    <md-card-content class="center">
+    <div class="center"> <i class="fa fa-user profile"></i></div>
+      <div layout="row" layout-sm="column" layout-align="space-around" ng-show="!userData">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+      </div>
+      <p><strong>{{userData.name}}</strong></p>
+      <p><strong>{{userData.store}}</strong></p>
+      <p style="white-space: pre-wrap;">{{userData.address}}
+{{userData.city}}, {{userData.state}} {{userData.zip}}
+      </p>
+      <p>{{userData.email}}</p>
+      <md-button ng-click="editProfile()">Edit Profile</md-button>
+    </md-card-content>
+  </md-card>
+</div>

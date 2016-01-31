@@ -289,6 +289,14 @@ md-sidenav.md-locked-open {
       max-width: 400px;
       min-width: 200px; } }
 
+.my-content-row {
+  max-width: 500px;
+  min-width: 300px; }
+  @media (max-width: 800px) {
+    .my-content-row {
+      max-width: 200px;
+      min-width: 100px; } }
+
 .ng-gallery {
   text-align: center; }
   .ng-gallery .thumb-holder {
@@ -332,3 +340,8 @@ md-sidenav.md-locked-open {
 
 .testimonial-list {
   height: 7vh; }
+
+.profile {
+  border-radius: 120px;
+  border: 1px solid lightgrey;
+  padding: 20px; }

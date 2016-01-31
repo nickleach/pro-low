@@ -1,9 +1,9 @@
-function WholesaleController($scope, UserService, $log, $cookies, $state){
+function WholesaleController($scope, UserService, CartService, $log, $cookies, $state){
 
   const
       id = $cookies.get('userId'),
       token = $cookies.get('token'),
-      items = $cookies.getObject('items');
+      userItems = $cookies.getObject('items');
 
   if (id && token) {
     UserService._getUser(id)
@@ -11,20 +11,33 @@ function WholesaleController($scope, UserService, $log, $cookies, $state){
       $scope.userData = data;
       $log.debug('User Data', data);
     });
-    if(!items){
+    if (!userItems) {
       UserService.getUserInfo()
         .success((data) =>{
         $cookies.put('items', data.items);
         $log.debug(data.items);
-
+        $scope.userItems = data.items;
       });
     } else {
-      $scope.userItems = items;
-      $log.debug("User Items", items);
+      $scope.userItems = userItems;
     }
+    CartService.getItems()
+      .success((data) => {
+        $log.debug('Retrieved Items', data);
+        $scope.userItems = data.map((item) => {
+          const thisItem = $scope.userItems.find((i) => i.itemId === item._id);
+          thisItem.title = item.title;
+          return thisItem;
+        });
+      });
+    $log.debug("User Items", userItems);
   } else {
     $state.go('home');
   }
+
+  $scope.editProfile = function(){
+    $state.go('buyWholesale.edit');
+  };
 
 }
 
