@@ -208,6 +208,9 @@ body {
 
 .main-content {
   background-color: #1D3C7C; }
+  .main-content .fa-user {
+    font-size: 63px;
+    margin: 4vmin; }
 
 .main-img {
   width: 30vw; }
@@ -333,10 +336,6 @@ md-sidenav.md-locked-open {
   border: 1px solid #ddd;
   width: 90px;
   margin: 16px; }
-
-.fa-user {
-  font-size: 63px;
-  margin: 4vmin; }
 
 .testimonial-list {
   height: 7vh; }

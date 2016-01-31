@@ -24,6 +24,12 @@
         <i class="fa fa-youtube"></i>
       </div>
     </md-toolbar> -->
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
     <nav>
     <div class="nav-wrapper">
       <a ng-click="navigateTo('home')" class="brand-logo"><img src="assets/logos/nav-logo-white.png" alt="pro low logo"></a>
@@ -39,6 +45,28 @@
 
       </div>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li ng-if="isUserLoggedIn">
+          <md-menu>
+            <md-button aria-label="Open user profile" ng-click="openMenu($mdOpenMenu, $event)">
+              <i class="fa fa-user" style="display: inline;"></i>
+            </md-button>
+            <md-menu-content width="4">
+              <md-menu-item>
+                <md-button ng-click="navigateTo('buyWholesale')">
+                  <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                  Buy/Profile
+                </md-button>
+              </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+              <md-menu-item ng-controller="UserController">
+                <md-button ng-click="logOut()">
+                  <md-icon md-svg-icon="call:voicemail"></md-icon>
+                  Logout
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </li>
         <li><a href="https://www.facebook.com/prolowputting/"><i class="fa fa-facebook"></i></a></li>
         <li><a href="#"><i class="fa fa-youtube"></i></a></li>
         <li ng-show="hasCart" style="border-left: 1px solid white;">
@@ -70,6 +98,9 @@
         <md-list>
           <md-list-item id="cart" ng-show="hasCart" ng-click="navigateTo('cart', 'left')">
            <i class="fa fa-shopping-cart"></i><p>Shopping Cart</p>
+          </md-list-item>
+          <md-list-item id="buyWholesale" ng-show="isUserLoggedIn" ng-click="navigateTo('buyWholesale', 'left')">
+           <i class="fa fa-user"></i><p>{{username}}</p>
           </md-list-item>
           <md-list-item id="buy" ng-click="navigateTo('buy', 'left')">
            <i class="fa fa-shopping-bag"></i><p>Buy Now</p>

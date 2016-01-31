@@ -5,16 +5,19 @@ let UserService = function($http, API, $cookies, $state, $rootScope, $log){
   }
 
   function checkUser(){
-    const token = $cookies.get('token');
-    if(token){
-      _setToken(token);
+    const
+      token = $cookies.get('token'),
+      username = $cookies.get('username');
+    if(token && username){
+      _setToken(token, username);
     }
   }
 
-  function _setToken(token){
-    if(token){
+  function _setToken(token, username){
+    if(token && username){
       API.CONFIG.headers['x-access-token'] = token;
       $rootScope.isUserLoggedIn = true;
+      $rootScope.username = username;
     }else{
       $rootScope.isUserLoggedIn = false;
     }

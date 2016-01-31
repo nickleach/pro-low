@@ -17,6 +17,10 @@ body{
 // where route changes
 .main-content{
   background-color: $blue;
+  .fa-user{
+  font-size: 63px;
+  margin: 4vmin;
+  }
 }
 .main-img{
   width: 30vw;
@@ -195,10 +199,7 @@ md-sidenav.md-locked-open {
   border-radius: 30px;
   border: 1px solid #ddd;
   width: 90px;
-  margin: 16px; }
-.fa-user{
-  font-size: 63px;
-  margin: 4vmin;
+  margin: 16px;
 }
 .testimonial-list{
   height: 7vh;

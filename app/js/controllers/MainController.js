@@ -1,7 +1,9 @@
 function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state, $mdDialog, CartService, $rootScope){
-
-$rootScope.shippingTiers = CartService.getShippingTiers();
-
+  $(".dropdown-button").dropdown();
+  $rootScope.shippingTiers = CartService.getShippingTiers();
+$scope.openMenu = function($mdOpenMenu, ev) {
+    $mdOpenMenu(ev);
+  };
 
  $scope.$watch('cart', function() {
     var subtotal = 0;
