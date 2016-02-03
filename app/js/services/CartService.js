@@ -76,45 +76,45 @@ let CartService = function($cookies, $state, $rootScope, $http, $log, API){
     return cartItems;
   }
 
-  function getShippingTiers(){
-    let shipping = {
-      tier1: {
-        quantity: 5,
-        price: 5
-      },
-      tier2: {
-        quantity: 10,
-        price: 10
-      },
-      tier3: {
-        quantity: 20,
-        price: 20
-      }
-    };
-    $log.debug("Shipping Tiers", shipping);
-    return shipping;
-  }
+  // function getShippingTiers(){
+  //   let shipping = {
+  //     tier1: {
+  //       quantity: 5,
+  //       price: 5
+  //     },
+  //     tier2: {
+  //       quantity: 10,
+  //       price: 10
+  //     },
+  //     tier3: {
+  //       quantity: 20,
+  //       price: 20
+  //     }
+  //   };
+  //   $log.debug("Shipping Tiers", shipping);
+  //   return shipping;
+  // }
 
-  function calculateShipping(cart, tiers){
-    cart.items.forEach((item) =>{
-    if(item.quantity >= tiers.tier1.quantity && item.quantity < tiers.tier2.quantity){
-        item.shipping = tiers.tier1.price;
-      }else if(item.quantity >= tiers.tier2.quantity && item.quantity < tiers.tier3.quantity){
-        item.shipping = tiers.tier2.price;
-      }else if(item.quantity > tiers.tier3.quantity ){
-        item.shipping = tiers.tier3.price;
-      }else{
-        item.shipping = 0;
-      }
-    });
+  // function calculateShipping(cart, tiers){
+  //   cart.items.forEach((item) =>{
+  //   if(item.quantity >= tiers.tier1.quantity && item.quantity < tiers.tier2.quantity){
+  //       item.shipping = tiers.tier1.price;
+  //     }else if(item.quantity >= tiers.tier2.quantity && item.quantity < tiers.tier3.quantity){
+  //       item.shipping = tiers.tier2.price;
+  //     }else if(item.quantity > tiers.tier3.quantity ){
+  //       item.shipping = tiers.tier3.price;
+  //     }else{
+  //       item.shipping = 0;
+  //     }
+  //   });
 
-    cart.shipping = cart.items.reduce((total, item) =>{
-      return total + item.shipping;
-    }, 0);
+  //   cart.shipping = cart.items.reduce((total, item) =>{
+  //     return total + item.shipping;
+  //   }, 0);
 
-    return cart;
+  //   return cart;
 
-  }
+  // }
 
   function cartWatch(cart, shipping) {
     var subtotal = 0;
@@ -160,8 +160,8 @@ let CartService = function($cookies, $state, $rootScope, $http, $log, API){
     getCart,
     setCart,
     updateCart,
-    getShippingTiers,
-    calculateShipping,
+    // getShippingTiers,
+    // calculateShipping,
     cartWatch
   };
 

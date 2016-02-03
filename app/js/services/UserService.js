@@ -14,10 +14,12 @@ let UserService = function($http, API, $cookies, $state, $rootScope, $log){
   }
 
   function _setToken(token, username){
-    if(token && username){
+    if (token) {
       API.CONFIG.headers['x-access-token'] = token;
       $rootScope.isUserLoggedIn = true;
-      $rootScope.username = username;
+      if (username) {
+        $rootScope.username = username;
+      }
     }else{
       $rootScope.isUserLoggedIn = false;
     }
@@ -44,12 +46,12 @@ let UserService = function($http, API, $cookies, $state, $rootScope, $log){
     _setToken(data.token);
     getUserInfo()
       .success((userData) =>{
-        $log.debug('User data', userData);
-        $cookies.putObject('items', userData.items);
+        $log.debug('User data from login', userData);
+        $cookies.putObject('items', {items: userData.items});
         $cookies.put('username', userData.username);
+        $log.debug('Logged in!', data);
+        $state.go('buyWholesale');
       });
-    $state.go('buyWholesale');
-    $log.debug('Logged in!', data);
   }
 
   function _updateUser(userId, user){
@@ -58,6 +60,9 @@ let UserService = function($http, API, $cookies, $state, $rootScope, $log){
 
   function logOut(){
     $cookies.remove('token');
+    $cookies.remove('items');
+    $cookies.remove('userId');
+    $cookies.remove('username');
     _setToken();
     $state.go('home');
   }

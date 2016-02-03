@@ -9,23 +9,35 @@
       <ul>
         <li ng-repeat="i in userItems">
           <h6>{{i.title}}</h6>
+          <form ng-submit="addToCart(i)" class="col s4">
+            <md-input-container>
+            <label>Quantity</label>
+              <input ng-model="i.quantity" style="max-width: 50px; text-align: center;" type="number" step="1" min="5" ng-init="i.quantity = 5">
+            </md-input-container>
+            <p>Price: ${{i.price}} </p>
+            <input type="hidden" ng-model="i.title">
+            <input type="hidden" ng-model="i.basePrice">
+            <md-button>Add to Cart</md-button>
+          </form>
         </li>
       </ul>
     </md-card-content>
   </md-card>
-  <md-card class="my-content-row" flex="50" ui-view>
-    <md-card-content class="center">
-    <div class="center"> <i class="fa fa-user profile"></i></div>
-      <div layout="row" layout-sm="column" layout-align="space-around" ng-show="!userData">
-        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-      </div>
-      <p><strong>{{userData.name}}</strong></p>
-      <p><strong>{{userData.store}}</strong></p>
-      <p style="white-space: pre-wrap;">{{userData.address}}
-{{userData.city}}, {{userData.state}} {{userData.zip}}
-      </p>
-      <p>{{userData.email}}</p>
-      <md-button ng-click="editProfile()">Edit Profile</md-button>
-    </md-card-content>
-  </md-card>
+  <div ui-view>
+    <md-card class="my-content-row" flex="50">
+      <md-card-content class="center">
+      <div class="center"> <i class="fa fa-user profile"></i></div>
+        <div layout="row" layout-sm="column" layout-align="space-around" ng-show="!userData">
+          <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+        <p><strong>{{userData.name}}</strong></p>
+        <p><strong>{{userData.store}}</strong></p>
+        <p style="white-space: pre-wrap;">{{userData.address}}
+  {{userData.city}}, {{userData.state}} {{userData.zip}}
+        </p>
+        <p>{{userData.email}}</p>
+        <md-button ng-click="editProfile()">Edit Profile</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
 </div>

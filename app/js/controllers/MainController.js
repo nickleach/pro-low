@@ -1,6 +1,6 @@
 function MainController($scope, $timeout, $mdSidenav, $log, $mdUtil, $state, $mdDialog, CartService, $rootScope){
   $(".dropdown-button").dropdown();
-  $rootScope.shippingTiers = CartService.getShippingTiers();
+  // $rootScope.shippingTiers = CartService.getShippingTiers();
 $scope.openMenu = function($mdOpenMenu, ev) {
     $mdOpenMenu(ev);
   };
@@ -21,7 +21,8 @@ $scope.openMenu = function($mdOpenMenu, ev) {
         }, 0);
 
       }
-        $scope.cart = CartService.calculateShipping($scope.cart, $scope.shippingTiers);
+      $scope.cart.shipping = 0;
+        // $scope.cart = CartService.calculateShipping($scope.cart, $scope.shippingTiers);
         $scope.cart.subtotal = subtotal.toFixed(2);
         $scope.cart.total = (subtotal + $scope.cart.shipping).toFixed(2);
 

@@ -3,7 +3,7 @@ function WholesaleController($scope, UserService, CartService, $log, $cookies, $
   const
       id = $cookies.get('userId'),
       token = $cookies.get('token'),
-      userItems = $cookies.getObject('items');
+      userItems = $cookies.getObject('items').items;
 
   if (id && token) {
     UserService._getUser(id)
@@ -27,6 +27,7 @@ function WholesaleController($scope, UserService, CartService, $log, $cookies, $
         $scope.userItems = data.map((item) => {
           const thisItem = $scope.userItems.find((i) => i.itemId === item._id);
           thisItem.title = item.title;
+          thisItem.basePrice = thisItem.price;
           return thisItem;
         });
       });
@@ -34,6 +35,10 @@ function WholesaleController($scope, UserService, CartService, $log, $cookies, $
   } else {
     $state.go('home');
   }
+
+  $scope.addToCart = function(item){
+    CartService.setCart(item);
+  };
 
   $scope.editProfile = function(){
     $state.go('buyWholesale.edit');
