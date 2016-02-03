@@ -71552,9 +71552,10 @@ $(document).ready(function(){
   var methods = {
 
     init : function(options) {
+      var defaultHeight = window.screen.width > 1500 ? 1000 : 400;
       var defaults = {
         indicators: true,
-        height: 400,
+        height: defaultHeight,
         transition: 500,
         interval: 6000
       };
@@ -71868,6 +71869,7 @@ $(document).ready(function(){
       }
     }; // Plugin end
 }( jQuery ));
+
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org

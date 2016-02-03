@@ -3,9 +3,10 @@
   var methods = {
 
     init : function(options) {
+      var defaultHeight = window.screen.width > 1500 ? 1000 : 400;
       var defaults = {
         indicators: true,
-        height: 400,
+        height: defaultHeight,
         transition: 500,
         interval: 6000
       };
