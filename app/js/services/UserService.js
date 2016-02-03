@@ -37,6 +37,9 @@ let UserService = function($http, API, $cookies, $state, $rootScope, $log){
     $http.post(`${API.URL}/authenticate`, user)
       .success((data) => {
         _successLog(data);
+      })
+      .error((data) => {
+        $rootScope.failedLoginMessage = `${data}`;
       });
   }
 

@@ -1,6 +1,7 @@
-function BuyController($scope, $cookies, $state, CartService, $log){
+function BuyController($scope, $cookies, $state, CartService, $log, $rootScope){
 
   $scope.loading = true;
+  $rootScope.failedLoginMessage = '';
 
   CartService.getItems()
     .success((data) =>{
