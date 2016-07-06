@@ -11,7 +11,7 @@ var plumber     = require('gulp-plumber');
 var jshint      = require('gulp-jshint');
 var stylish     = require('jshint-stylish');
 var htmlhint    = require('gulp-htmlhint');
-var server      = require('gulp-server-livereload');
+var connect = require('gulp-connect');
 var babelify    = require('babelify');
 var source      = require('vinyl-source-stream');
 var browserify  = require('browserify');
@@ -78,12 +78,12 @@ gulp.task('watchlist', function() {
 // SERVER
 //================================================
 
+
 gulp.task('webserver', function() {
-  return gulp.src('app')
-    .pipe(server({
-      livereload: true,
-      // open: true // Uncomment if you want it to open the project for you
-    }));
+  connect.server({
+    root: 'app',
+    livereload: true
+  });
 });
 
 
