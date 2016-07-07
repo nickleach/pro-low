@@ -19,26 +19,26 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider, $logProv
       templateUrl: 'js/templates/story.tpl.html',
       controller: 'MainController'
     })
-    .state('testimonials', {
-      url: '/testimonials',
-      templateUrl: 'js/templates/testimonials.tpl.html',
-      controller: 'TestimonialController'
-    })
-    .state('testimonials.add', {
-      url: '/add',
-      templateUrl: 'js/templates/testimonials.add.tpl.html',
-      controller: 'TestimonialController'
-    })
-    .state('testimonials.single', {
-      url: '/:id',
-      templateUrl: 'js/templates/testimonials.single.tpl.html',
-      controller: 'TestimonialSingleCtrl',
-    })
-    .state('gallery', {
-      url: '/gallery',
-      templateUrl: 'js/templates/gallery.tpl.html',
-      controller: 'MediaController'
-    })
+    // .state('testimonials', {
+    //   url: '/testimonials',
+    //   templateUrl: 'js/templates/testimonials.tpl.html',
+    //   controller: 'TestimonialController'
+    // })
+    // .state('testimonials.add', {
+    //   url: '/add',
+    //   templateUrl: 'js/templates/testimonials.add.tpl.html',
+    //   controller: 'TestimonialController'
+    // })
+    // .state('testimonials.single', {
+    //   url: '/:id',
+    //   templateUrl: 'js/templates/testimonials.single.tpl.html',
+    //   controller: 'TestimonialSingleCtrl',
+    // })
+    // .state('gallery', {
+    //   url: '/gallery',
+    //   templateUrl: 'js/templates/gallery.tpl.html',
+    //   controller: 'MediaController'
+    // })
     .state('videos', {
       url: '/videos',
       templateUrl: 'js/templates/videos.tpl.html',

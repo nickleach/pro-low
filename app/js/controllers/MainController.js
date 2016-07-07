@@ -5,6 +5,7 @@ $scope.openMenu = function($mdOpenMenu, ev) {
     $mdOpenMenu(ev);
   };
 
+
  $scope.$watch('cart', function() {
     var subtotal = 0;
     if(!_.isEmpty($rootScope.cart)){

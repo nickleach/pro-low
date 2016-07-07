@@ -11,10 +11,12 @@ var plumber     = require('gulp-plumber');
 var jshint      = require('gulp-jshint');
 var stylish     = require('jshint-stylish');
 var htmlhint    = require('gulp-htmlhint');
-var connect = require('gulp-connect');
+var connect     = require('gulp-connect');
 var babelify    = require('babelify');
 var source      = require('vinyl-source-stream');
 var browserify  = require('browserify');
+var babel       = require('gulp-babel');
+var server      = require('gulp-server-livereload');
 
 
 var notifyError = function() {
@@ -59,6 +61,14 @@ gulp.task('babelify', function() {
   .pipe(gulp.dest('./app/dist/'));
 });
 
+// gulp.task('babelify', function() {
+//     gulp.src('app/js/main.js')
+//         .pipe(babel({
+//             presets: ['es2015']
+//         }))
+//         .pipe(gulp.dest('app/dist/'))
+// });
+
 
 //================================================
 //  WATCH
@@ -82,9 +92,19 @@ gulp.task('watchlist', function() {
 gulp.task('webserver', function() {
   connect.server({
     root: 'app',
-    livereload: true
+    livereload: true,
+    port: 8888
   });
 });
+
+// gulp.task('webserver', function() {
+//   return gulp.src('app')
+//     .pipe(server({
+//       livereload: true,
+//       // open: true // Uncomment if you want it to open the project for you
+//     }));
+// });
+
 
 
 //================================================
