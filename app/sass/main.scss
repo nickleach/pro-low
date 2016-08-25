@@ -3,6 +3,9 @@
 @import "overrides";
 @import "_breakpoint";
 
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
 
 $desktop : 992px;
 $handheld: max-width 800px;
@@ -227,4 +230,11 @@ md-sidenav.md-locked-open {
   border: 1px solid lightgrey;
   padding: 20px;
   // font-size: 50px;
+}
+
+// videos
+.videos {
+  iframe {
+    margin: 10px;
+  }
 }

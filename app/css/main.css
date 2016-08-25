@@ -200,6 +200,9 @@ md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-ta
   -moz-transform: translate3d(100px, 0, 0);
   transform: translate3d(100px, 0, 0); }
 
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none; }
+
 body {
   background-color: #1D3C7C; }
 
@@ -354,3 +357,6 @@ md-sidenav.md-locked-open {
   border-radius: 120px;
   border: 1px solid lightgrey;
   padding: 20px; }
+
+.videos iframe {
+  margin: 10px; }
